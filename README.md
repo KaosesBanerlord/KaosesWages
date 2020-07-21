@@ -1,2 +1,2 @@
-# KaosesWages
-kaoses wages for bannerlords
+# KaosesProjectiles
+kaoses projectioles for bannerlords
