@@ -105,6 +105,7 @@ namespace KaosesWages.Models
 			int num3 = 0;
 			new ExplainedNumber(0f, explanation, null);
 			KaosesTroopWage troopWages = new KaosesTroopWage();
+
 			try
 			{
 				WagesTypes wageTypes = new WagesTypes(mobileParty);
