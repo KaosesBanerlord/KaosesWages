@@ -175,53 +175,53 @@ namespace KaosesWages.Settings
         public bool bUsePlayerCompanionWagesCostModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Companion Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Companion Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Companion wages by the multiplier supplied.")]
         [SettingPropertyGroup("Wages/Player/Wages By Tier")]
         public float tierPlayerCompanionWagesMultiplier { get; set; } = 1.0f;
 
-        [SettingPropertyFloatingInteger("Tier 0 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 0 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 0 wages by the multiplier supplied.")]
         [SettingPropertyGroup("Wages/Player/Wages By Tier")]
         public float tier0PlayerWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 1 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 1 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 1 wages by the multiplier supplied.")]
         [SettingPropertyGroup("Wages/Player/Wages By Tier")]
         public float tier1PlayerWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 2 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 2 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 2 wages by the multiplier supplied.")]
         [SettingPropertyGroup("Wages/Player/Wages By Tier")]
         public float tier2PlayerWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 3 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 3 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 3 wages by the multiplier supplied.")]
         [SettingPropertyGroup("Wages/Player/Wages By Tier")]
         public float tier3PlayerWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 4 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 4 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 4 wages by the multiplier supplied.")]
         [SettingPropertyGroup("Wages/Player/Wages By Tier")]
         public float tier4PlayerWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 5 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 5 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 5 wages by the multiplier supplied.")]
         [SettingPropertyGroup("Wages/Player/Wages By Tier")]
         public float tier5PlayerWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 6 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 6 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 6 wages by the multiplier supplied.")]
         [SettingPropertyGroup("Wages/Player/Wages By Tier")]
         public float tier6PlayerWagesMultiplier { get; set; } = 1.0f;
 
-        [SettingPropertyFloatingInteger("Tier 7+ Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false,
+        [SettingPropertyFloatingInteger("Tier 7+ Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
            HintText = "Multiply Troop Tier 7+ wages by the multiplier supplied.")]
         [SettingPropertyGroup("Wages/Player/Wages By Tier")]
         public float tier7PlayerWagesMultiplier { get; set; } = 1.0f;
@@ -236,7 +236,7 @@ namespace KaosesWages.Settings
         public bool bUsePlayerCaravanWagesModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Caravan Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Caravan Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Caravan Troop wages cost by the multiplier supplied.")]
         [SettingPropertyGroup("Wages/Player/Caravan Wages")]
         public float wagesPlayerCaravanMultiplier { get; set; } = 1.0f;
@@ -250,7 +250,7 @@ namespace KaosesWages.Settings
         public bool bUsePlayerGarrisonWagesModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Garrison Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Garrison Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Garrison Troop wages cost by the multiplier supplied.")]
         [SettingPropertyGroup("Wages/Player/Garrison Wages")]
         public float wagesPlayerGarrisonMultiplier { get; set; } = 1.0f;
@@ -264,7 +264,7 @@ namespace KaosesWages.Settings
         public bool bUsePlayerMercenaryWagesModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Mercenary Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Mercenary Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Mercenary wages cost by the multiplier [Native:2.0].")]
         [SettingPropertyGroup("Wages/Player/Mercenary Wages")]
         public float tierPlayerMercenaryWagesMultiplier { get; set; } = 2.0f;
@@ -278,7 +278,7 @@ namespace KaosesWages.Settings
         public bool bUsePlayerBanditWagesModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Bandit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Bandit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Bandit wages cost by the multiplier [Native: N/A].")]
         [SettingPropertyGroup("Wages/Player/Bandit Wages")]
         public float playerBanditWagesMultiplier { get; set; } = 1.5f;
@@ -311,60 +311,60 @@ namespace KaosesWages.Settings
         public bool bUsePlayerCompanionRecruitCostModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Tier 0 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 0 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 0 Recruit cost by this value.")]
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public float tier0PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 1 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false,
+        [SettingPropertyFloatingInteger("Tier 1 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
             HintText = "Multiply Troop Tier 1 Recruit cost by this value.")]
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public float tier1PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 2 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 2 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 2 Recruit cost by this value.")]
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public float tier2PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 3 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 3 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 3 Recruit cost by this value.")]
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public float tier3PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 4 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 4 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 4 Recruit cost by this value.")]
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public float tier4PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 5 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 5 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 5 Recruit cost by this value.")]
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public float tier5PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 6 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 6 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 6 Recruit cost by this value.")]
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public float tier6PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 7+ Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 7+ Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 7+ Recruit cost by this value.")]
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public float tier7PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Mercenary Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Mercenary Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Mercenary Recruit cost by this value [Native:2.0].")]
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public float tierMercenaryPlayerRecruitCostMultiplier { get; set; } = 2.0f;
 
-        [SettingPropertyFloatingInteger("Bandit Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Bandit Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Bandit Recruit cost by this value [Native: N/A].")]
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public float tierBanditPlayerRecruitCostMultiplier { get; set; } = 0.7f;
@@ -379,7 +379,7 @@ namespace KaosesWages.Settings
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public int tierMountedPlayerRecruitHighCost { get; set; } = 500;
 
-        [SettingPropertyFloatingInteger("Companion Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false,
+        [SettingPropertyFloatingInteger("Companion Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
             HintText = "Multiply Companion recruitment cost value for being hired by the player [Native:0].")]
         [SettingPropertyGroup("Wages/Player/Recruit Cost")]
         public float tierCompanionRecruitCostMultiplier { get; set; } = 1.0f;
@@ -392,7 +392,7 @@ namespace KaosesWages.Settings
         public bool bUsePlayerUpgradeCostMultiplier { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Upgrade Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false,
+        [SettingPropertyFloatingInteger("Upgrade Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
             HintText = "Multiply the cost of upgrading troops for the player and optionally players clan.")]//
         [SettingPropertyGroup("Wages/Player/Upgrade Cost")]
         public float playerUpgradeCostMultiplier { get; set; } = 1.0f;
@@ -421,55 +421,55 @@ namespace KaosesWages.Settings
 
 
         #region AIWagesTroopWages
-        [SettingPropertyFloatingInteger("Companion Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Companion Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Companion wages by the multiplier supplied.")]//
         [SettingPropertyGroup("Wages/AI/Wages By Tier")]
         public float tierAIHeroWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 0 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 0 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 0 wages by the multiplier supplied.")]//
         [SettingPropertyGroup("Wages/AI/Wages By Tier")]
         public float tier0AIWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 1 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 1 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 1 wages by the multiplier supplied.")]//
         [SettingPropertyGroup("Wages/AI/Wages By Tier")]
         public float tier1AIWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 2 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 2 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 2 wages by the multiplier supplied.")]//
         [SettingPropertyGroup("Wages/AI/Wages By Tier")]
         public float tier2AIWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 3 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 3 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 3 wages by the multiplier supplied.")]//
         [SettingPropertyGroup("Wages/AI/Wages By Tier")]
         public float tier3AIWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 4 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 4 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 4 wages by the multiplier supplied.")]//
         [SettingPropertyGroup("Wages/AI/Wages By Tier")]
         public float tier4AIWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 5 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 5 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 5 wages by the multiplier supplied.")]//
         [SettingPropertyGroup("Wages/AI/Wages By Tier")]
         public float tier5AIWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 6 Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 6 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 6 wages by the multiplier supplied.")]//
         [SettingPropertyGroup("Wages/AI/Wages By Tier")]
         public float tier6AIWagesMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 7+ Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 7+ Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Troop Tier 7+ wages by the multiplier supplied.")]//
         [SettingPropertyGroup("Wages/AI/Wages By Tier")]
         public float tier7AIWagesMultiplier { get; set; } = 1.0f;
@@ -482,7 +482,7 @@ namespace KaosesWages.Settings
         public bool bUseAICaravanWagesModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Caravan Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Caravan Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Caravan Troop wages cost by the multiplier supplied.")]//
         [SettingPropertyGroup("Wages/AI/Caravan Wages")]
         public float wagesAICaravanMultiplier { get; set; } = 1.0f;
@@ -495,7 +495,7 @@ namespace KaosesWages.Settings
         public bool bUseAIGarrisonWagesModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Garrison Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Garrison Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Garrison Troop wage cost by the multiplier supplied.")]//
         [SettingPropertyGroup("Wages/AI/Garrison Wages")]
         public float wagesAIGarrisonMultiplier { get; set; } = 1.0f;
@@ -520,7 +520,7 @@ namespace KaosesWages.Settings
         public bool bUseAIMercenaryWagesModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Mercenary Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Mercenary Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Mercenary wage cost by the multiplier supplied  [Native 2.0].")]//
         [SettingPropertyGroup("Wages/AI/Mercenary Wages")]
         public float tierAIMercenaryWagesMultiplier { get; set; } = 2.0f;
@@ -533,7 +533,7 @@ namespace KaosesWages.Settings
         public bool bUseAIBanditWagesModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Bandit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Bandit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Bandit wage cost by the multiplier supplied  [Native 0].")]//
         [SettingPropertyGroup("Wages/AI/Bandit Wages")]
         public float tierAIBanditWagesMultiplier { get; set; } = 1.5f;
@@ -548,61 +548,61 @@ namespace KaosesWages.Settings
         public bool bUseAIRecruitCostModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Tier 0 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 0 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 0 Recruit cost by this value.")]//
         [SettingPropertyGroup("Wages/AI/Recruit Cost")]
         public float tier0AIRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 1 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 1 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 1 Recruit cost by this value.")]//
         [SettingPropertyGroup("Wages/AI/Recruit Cost")]
         public float tier1AIRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 2 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 2 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 2 Recruit cost by this value.")]//
         [SettingPropertyGroup("Wages/AI/Recruit Cost")]
         public float tier2AIRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 3 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 3 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 3 Recruit cost by this value.")]//
         [SettingPropertyGroup("Wages/AI/Recruit Cost")]
         public float tier3AIRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 4 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 4 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 4 Recruit cost by this value.")]//
         [SettingPropertyGroup("Wages/AI/Recruit Cost")]
         public float tier4AIRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 5 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 5 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 5 Recruit cost by this value.")]//
         [SettingPropertyGroup("Wages/AI/Recruit Cost")]
         public float tier5AIRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 6 Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 6 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 6 Recruit cost by this value.")]//
         [SettingPropertyGroup("Wages/AI/Recruit Cost")]
         public float tier6AIRecruitCostMultiplier { get; set; } = 1.0f;
 
 
-        [SettingPropertyFloatingInteger("Tier 7+ Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Tier 7+ Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Tier 7+ Recruit cost by this value.")]//
         [SettingPropertyGroup("Wages/AI/Recruit Cost")]
         public float tier7AIRecruitCostMultiplier { get; set; } = 1.0f;
 
 
 
-        [SettingPropertyFloatingInteger("Mercenary Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Mercenary Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Mercenary Recruit cost by this value  [Native 1.5].")]//
         [SettingPropertyGroup("Wages/AI/Recruit Cost")]
         public float tierMercenaryAIRecruitCostMultiplier { get; set; } = 2.0f;
 
-        [SettingPropertyFloatingInteger("Bandit Recruit Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Bandit Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Bandit Recruit cost by this value  [Native 1.5].")]//
         [SettingPropertyGroup("Wages/AI/Recruit Cost")]
         public float tierBanditAIRecruitCostMultiplier { get; set; } = 0.7f;
@@ -628,7 +628,7 @@ namespace KaosesWages.Settings
         public bool bUseAIUpgradeCostMultiplier { get; set; } = true;
 
 
-        [SettingPropertyFloatingInteger("Troop Upgrade Multiplier", 0.1f, 10.0f, Order = 2, RequireRestart = false, 
+        [SettingPropertyFloatingInteger("Troop Upgrade Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply the cost of upgrading troops for the AI.")]//
         [SettingPropertyGroup("Wages/AI/Upgrade Cost")]
         public float AIUpgradeCostMultiplier { get; set; } = 1.0f;
