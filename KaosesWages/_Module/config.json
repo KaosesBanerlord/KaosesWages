@@ -1,0 +1,113 @@
+{
+	/* General Options*/
+	"Debug": false, /* Only enable for debugging*/
+	"LoadMCMConfigFile": false,
+	"LogToFile": false,
+
+	/* General Options*/
+
+	/* Recruit base cost */
+	"tier0RecruitCostBase": "10", /*set the base recruit cost for tier  version 0.0.9*/
+	"tier1RecruitCostBase": "20", /*set the base recruit cost for tier  version 0.0.9*/
+	"tier2RecruitCostBase": "50", /*set the base recruit cost for tier  version 0.0.9*/
+	"tier3RecruitCostBase": "100", /*set the base recruit cost for tier  version 0.0.9*/
+	"tier4RecruitCostBase": "200", /*set the base recruit cost for tier  version 0.0.9*/
+	"tier5RecruitCostBase": "400", /*set the base recruit cost for tier  version 0.0.9*/
+	"tier6RecruitCostBase": "600", /*set the base recruit cost for tier  version 0.0.9*/
+	"tier7RecruitCostBase": "1000", /*set the base recruit cost for tier  version 0.0.9*/
+	"tierOtherRecruitCostBase": "1500", /*set the base recruit cost for tier  version 0.0.9*/
+
+	/* Wage Base Cost */
+	"tier0WagesBase": "1", /*set the base wage cost for tier  version 0.0.9*/
+	"tier1WagesBase": "2", /*set the base wage cost for tier  version 0.0.9*/
+	"tier2WagesBase": "3", /*set the base wage cost for tier  version 0.0.9*/
+	"tier3WagesBase": "5", /*set the base wage cost for tier  version 0.0.9*/
+	"tier4WagesBase": "8", /*set the base wage cost for tier  version 0.0.9*/
+	"tier5WagesBase": "12", /*set the base wage cost for tier  version 0.0.9*/
+	"tier6WagesBase": "17", /*set the base wage cost for tier  version 0.0.9*/
+	"tier7WagesBase": "23", /*set the base wage cost for tier  version 0.0.9*/
+	"tierOtherWagesBase": "33", /*set the base wage cost for tier  version 0.0.9*/
+
+	/* Player Options Enable/Disable Options*/
+	"bUsePlayerTierWagesModifiers": false, /* Enable to use player troop multipliers for wages*/
+	"bUsePlayerCompanionWagesCostModifiers": false, /* Enables Companion Troops wages to be same as player values else uses AI values version 0.0.9 */
+	"bUsePlayerMercenaryWagesModifiers": false, /* Enable to use player mercenary costs */
+	"bUsePlayerBanditWagesModifiers": false, /* Enable to use player bandit costs  version 0.0.9*/
+	"bUsePlayerWithHorsesWagesModifiers": false, /* Enable to use player troops with horses */
+	"bUsePlayerGarrisonWagesModifiers": false, /* Enable to use player garrison is applied to the total wage for each garrison */
+	"bUsePlayerCaravanWagesModifiers": false, /* Enable to use player caravan is applied to the total wage for each caravan */
+	"bUsePlayerWithHorsesWages": false, /* Enables Player troops with horses additional wage version 0.0.5 */
+	"bUsePlayerRecruitCostModifiers": false, /* Enables Player Recruit Troops cost Multipliers version 0.0.5 */
+	"bUsePlayerCompanionRecruitCostModifiers": false, /* Enables Companion Recruit Troops cost to be same as player values else uses AI values version 0.0.5 */
+
+	/* AI Options Enable/Disable Options*/
+	"bUseAITierWagesModifiers": false, /* Enable to use AI troop mages multipliers*/
+	"bUseAIMercenaryWagesModifiers": false, /* Enable to use AI mercenary costs*/
+	"bUseAIBanditWagesModifiers": false, /* Enable to use AI bandit costs version 0.0.9 */
+	"bUseAIWithHorsesWagesModifiers": false, /* Enables modifying AI troops with horses wages */
+	"bUseAIGarrisonWagesModifiers": false, /* Enable to use AI garrison is applied to the total wage for each garrison */
+	"bUseAICaravanWagesModifiers": false, /* Enable to use AI caravan is applied to the total wage for each caravan*/
+	"bUseAIRecruitCostModifiers": false, /* Enables AI Recruit Troops cost Multipliers version 0.0.5 */
+	"bUsePlayerUpgradeCostMultiplier": false, /* Enables Player Troop upgrade cost Multipliers version 0.0.6  */
+	"bUsePlayerUpgradeCostForClanMembers": false, /* Enables Clan member Troop upgrade cost to use player Multipliers version 0.0.6  */
+
+	/*Player Multipliers*/
+	"tierPlayerHeroWagesMultiplier": "1.0", /* Multiplies Player Companion wages */
+	"tier0PlayerWagesMultiplier": "1.0", /* Multiplies Player Troop Tier 0 wages */
+	"tier1PlayerWagesMultiplier": "1.0", /* Multiplies Player Troop Tier 1 wages */
+	"tier2PlayerWagesMultiplier": "1.0", /* Multiplies Player Troop Tier 2 wages */
+	"tier3PlayerWagesMultiplier": "1.0", /* Multiplies Player Troop Tier 3 wages */
+	"tier4PlayerWagesMultiplier": "1.0", /* Multiplies Player Troop Tier 4 wages */
+	"tier5PlayerWagesMultiplier": "1.0", /* Multiplies Player Troop Tier 5 wages */
+	"tier6PlayerWagesMultiplier": "1.0", /* Multiplies Player Troop Tier 6 wages */
+	"tier7PlayerWagesMultiplier": "1.0", /* Multiplies Player Troop Tier 7+ wages */
+	"tierPlayerMercenaryWagesMultiplier": "2.0", /* Multiplies Player mercenary wages  [Native 2.0]  */
+	"playerBanditWagesMultiplier": "1.5", /* Multiplies Player bandit wages  [Native N/A]  version 0.0.9*/
+	"wagesPlayerCaravanMultiplier": "1.0", /* Multiplies Player caravans total wages */
+	"wagesPlayerGarrisonMultiplier": "1.0", /* Multiplies Player garrison total wages */
+	"tierPlayerHorseWages": 0, /* Additional Troop with Horse daily wage cost  [Native 0] version 0.0.5  */
+	"playerUpgradeCostMultiplier": "1.0", /* Multiply the cost of upgrading troops fro the player and optionally players clan  version 0.0.6 */
+	"tier0PlayerRecruitCostMultiplier": "1.0", /* Multiply Player Troop Tier 0 Recruit cost by this value version 0.0.5 */
+	"tier1PlayerRecruitCostMultiplier": "1.0", /* Multiply Player Troop Tier 1 Recruit cost by this value version 0.0.5 */
+	"tier2PlayerRecruitCostMultiplier": "1.0", /*  Multiply Player Troop Tier 2 Recruit cost by this value version 0.0.5 */
+	"tier3PlayerRecruitCostMultiplier": "1.0", /* Multiply Player Troop Tier 3 Recruit cost by this value version 0.0.5 */
+	"tier4PlayerRecruitCostMultiplier": "1.0", /* Multiply Player Troop Tier 4 Recruit cost by this value version 0.0.5 */
+	"tier5PlayerRecruitCostMultiplier": "1.0", /* Multiply Player Troop Tier 5 Recruit cost by this value version 0.0.5 */
+	"tier6PlayerRecruitCostMultiplier": "1.0", /* Multiply Player Troop Tier 6 Recruit cost by this value version 0.0.5 */
+	"tier7PlayerRecruitCostMultiplier": "1.0", /* Multiply Player Troop Tier 7+ Recruit cost by this value version 0.0.5 */
+	"tierMercenaryPlayerRecruitCostMultiplier": "2.0", /* Multiply Player Troop Mercenary Recruit cost by this value version 0.0.9 */
+	"tierBanditPlayerRecruitCostMultiplier": "0.7", /* Multiply Player Troop bandit Recruit cost by this value version 0.0.9 */
+	"tierMountedPlayerRecruitCost": 150, /* Troop With Mounts additional Recruit cost for troops Tier < 4 [Native:150] value version 0.0.5 */
+	"tierMountedPlayerRecruitHighCost": 500, /* Troop With Mounts additional Recruit cost for troops Tier >= 4 [Native:150] value version 0.0.9 */
+	"tierCompanionRecruitCostMultiplier": 1.0, /* Multiply Companion recruitment cost value for being hired by the player [Native:0] version 0.0.9 */
+
+	/*AI Multipliers*/
+	"tierAIHeroWagesMultiplier": "1.0", /* Multiplies AI Hero wages */
+	"tier0AIWagesMultiplier": "1.0", /* Multiplies AI Troop Tier 0 wages */
+	"tier1AIWagesMultiplier": "1.0", /* Multiplies AI Troop Tier 1 wages */
+	"tier2AIWagesMultiplier": "1.0", /* Multiplies AI Troop Tier 2 wages */
+	"tier3AIWagesMultiplier": "1.0", /* Multiplies AI Troop Tier 3 wages */
+	"tier4AIWagesMultiplier": "1.0", /* Multiplies AI Troop Tier 4 wages*/
+	"tier5AIWagesMultiplier": "1.0", /* Multiplies AI Troop Tier 5 wages */
+	"tier6AIWagesMultiplier": "1.0", /* Multiplies AI Troop Tier 6 wages */
+	"tier7AIWagesMultiplier": "1.0", /* Multiplies AI Troop Tier 7+ wages */
+	"tierAIMercenaryWagesMultiplier": "2.0", /* Multiplies AI mercenary wages  [Native 1.5]  version 0.0.9*/
+	"tierAIBanditWagesMultiplier": "1.5", /* Multiplies AI mercenary wages  [Native N/A] version 0.0.9*/
+	"wagesAICaravanMultiplier": "1.0", /* Multiplies AI caravans total wages */
+	"wagesAIGarrisonMultiplier": "1.0", /* Multiplies AI garrison total wages */
+	"tierAIHorseWages": 0, /* Multiply AI Troop Horse cost by the supplied [Native 0] */
+	"tier0AIRecruitCostMultiplier": "1.0", /* Multiply AI Troop Tier 0 Recruit cost by this value version 0.0.5 */
+	"tier1AIRecruitCostMultiplier": "1.0", /* Multiply AI Troop Tier 1 Recruit cost by this value version 0.0.5 */
+	"tier2AIRecruitCostMultiplier": "1.0", /*  Multiply AI Troop Tier 2 Recruit cost by this value version 0.0.5 */
+	"tier3AIRecruitCostMultiplier": "1.0", /* Multiply AI Troop Tier 3 Recruit cost by this value version 0.0.5 */
+	"tier4AIRecruitCostMultiplier": "1.0", /* Multiply AI Troop Tier 4 Recruit cost by this value version 0.0.5 */
+	"tier5AIRecruitCostMultiplier": "1.0", /* Multiply AI Troop Tier 5 Recruit cost by this value version 0.0.5 */
+	"tier6AIRecruitCostMultiplier": "1.0", /* Multiply AI Troop Tier 6 Recruit cost by this value version 0.0.5 */
+	"tier7AIRecruitCostMultiplier": "1.0", /* Multiply AI Troop Tier 7+ Recruit cost by this value version 0.0.5 */
+	"tierMercenaryAIRecruitCostMultiplier": "2.0", /* Multiply AI Troop Mercenary Recruit cost by this value [Native 1.5] version 0.0.9 */
+	"tierBanditAIRecruitCostMultiplier": "0.7", /* Multiply AI Troop Bandit Recruit cost by this value [Native N/A] version 0.0.9 */
+	"tierMountedAIRecruitCost": 150, /* AI Troop With Mounts Recruit cost by this value for troops Tier < 4 [Native 150]  version 0.0.5 */
+	"tierMountedAIRecruitHighCost": 500, /* AI Troop With Mounts Recruit cost by this value for troops Tier >= 4 [Native 150]  version 0.0.9 */
+	"bUseAIUpgradeCostMultiplier": false, /* AI troop upgrade cost multiplier enable/disable */
+	"AIUpgradeCostMultiplier": 0 /* The multiplier of troop upgrade costs for the AI player */
+}

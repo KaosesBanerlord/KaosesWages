@@ -1,25 +1,30 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29806.167
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaosesWages", "KaosesWages\KaosesWages.csproj", "{FA570C82-A4D0-4D9C-9D34-AC30F47F0895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KaosesWages", "KaosesWages\KaosesWages.csproj", "{16BA6F77-3054-4FE2-9B0C-2D9FEBF2379F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{73C671FE-AF1D-43D9-81F3-8A886275C60C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FA570C82-A4D0-4D9C-9D34-AC30F47F0895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA570C82-A4D0-4D9C-9D34-AC30F47F0895}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA570C82-A4D0-4D9C-9D34-AC30F47F0895}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA570C82-A4D0-4D9C-9D34-AC30F47F0895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BA6F77-3054-4FE2-9B0C-2D9FEBF2379F}.Debug|x64.ActiveCfg = Debug|x64
+		{16BA6F77-3054-4FE2-9B0C-2D9FEBF2379F}.Debug|x64.Build.0 = Debug|x64
+		{16BA6F77-3054-4FE2-9B0C-2D9FEBF2379F}.Release|x64.ActiveCfg = Release|x64
+		{16BA6F77-3054-4FE2-9B0C-2D9FEBF2379F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F5333CCD-ADC2-480A-BF18-B05B421DF0DC}
+		SolutionGuid = {F00B2D76-7238-41D9-82EF-58A06A3DA29B}
 	EndGlobalSection
 EndGlobal
