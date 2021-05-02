@@ -19,7 +19,14 @@ namespace KaosesWages
         {
             base.OnBeforeInitialModuleScreenSetAsRoot();
             ConfigLoader.LoadConfig();
-            Ux.MessageInfo("Loaded: " + Statics._settings.ModDisplayName);
+            if (Statics.IsHarmonyLoaded())
+            {
+                Ux.MessageInfo("Loaded: " + Statics._settings.ModDisplayName);
+            }else
+            {
+                Ux.MessageError(Statics.prePrend + " : Will not function properly with out Harmony ");
+            }
+            
         }
 
         protected override void OnSubModuleLoad()
@@ -33,8 +40,8 @@ namespace KaosesWages
             catch (Exception ex)
             {
                 //Handle exceptions
-                Logging.Lm("Error with harmony patch");
-                Logging.Lm(ex.ToString());
+                Logging.Lm(Statics.prePrend + "Error with harmony patch");
+                Logging.Lm(Statics.prePrend + ex.ToString());
             }
             
         }

@@ -33,8 +33,8 @@ upgrade costs, recruitment costs, additional horse troop wages.
 - 0.0.9 
   - Fixed horse wages to apply without tier troop wages.
   - Updated the troop upgrade cost code to 1.5.9
-  - Upgraded Settings menu to Mod Configeration menu
-  - Made Mod Configeration Menu Optional
+  - Upgraded Settings menu to Mod Configuration menu
+  - Made Mod Configuration Menu Optional
   - Added setttings
     - bUseAIUpgradeCostMultiplier = false 
 	- AIUpgradeCostMultiplier = 0
@@ -70,11 +70,13 @@ upgrade costs, recruitment costs, additional horse troop wages.
   - Added MCM Presets
     - Kaoses {Increase various costs}
     - Native {resets values to native values}
-   
-
+- 0.1.0
+    - Fixed Issue with mercenary recruitment costs   
+    - Fixed missing dll include
 
 ## Todo
-
+- Update code and settings page to better reflect clan use over companion.
+- Verify for companions
 
 
 
@@ -90,6 +92,81 @@ https://forums.taleworlds.com/index.php?pages/modding/
 https://discordapp.com/invite/mountandblade
 ### TW Forum - Modding Discord:			
 https://discordapp.com/invite/ykFVJGQ
+
+
+## Harmoney
+https://harmony.pardeike.net/articles/patching-edgecases.html
+https://7d2dmods.github.io/HarmonyDocs/index.htm?PrefixandPostfix.html
+https://outward.fandom.com/wiki/Advanced_Modding_Guide/Hooks
+https://docs.reactor.gg/docs/basic/harmony_guide/
+https://api.raftmodding.com/modding-tutorials/harmony-basics
+
+
+https://github.com/BUTR
+https://github.com/BUTR/Bannerlord.Module.Template
+https://github.com/BUTR/Bannerlord.Harmony
+https://github.com/BUTR/Bannerlord.ButterLib
+https://github.com/BUTR/Bannerlord.Module.Template
+https://github.com/BUTR/Bannerlord.UIExtenderEx
+https://github.com/BUTR/Bannerlord.ReferenceAssemblies
+https://github.com/BUTR/Bannerlord.BuildResources
+
+https://www.nuget.org/profiles/BUTR
+
+
+https://www.nexusmods.com/mountandblade2bannerlord/mods/612
+https://github.com/Aragas/Bannerlord.MBOptionScreen
+https://github.com/Aragas/Bannerlord.MBOptionScreen/blob/dev/docs/articles/MCMv3/mcmv3-attributes.md
+https://mcm.bannerlord.aragas.org/articles/MCMv4/mcmv4.html
+https://mcm.bannerlord.aragas.org/articles/MCMv4/mcmv4-attributes.html
+https://mcm.bannerlord.aragas.org/api/MCM.Abstractions.Settings.Providers.BaseSettingsProvider.html
+https://www.nuget.org/packages/Bannerlord.MCM
+https://www.nuget.org/packages?q=Bannerlord
+https://www.nuget.org/packages/Bannerlord.Templates/
+
+
+no harmoney
+https://github.com/Salminar/NoHarmony/wiki
+https://github.com/Salminar/NoHarmony/wiki/How-to-use-NoHarmony
+https://github.com/Salminar/NoHarmony/wiki/Config-variables-list
+https://github.com/Salminar/NoHarmony/wiki/Public-methods-documentation
+
+
+
+https://github.com/zijistark/NobleTitles
+https://github.com/zijistark/QuickStart/
+https://github.com/zijistark/HousesCalradia
+https://github.com/lzh-mb-mod/BattleMiniMap
+https://github.com/cnedwin/Bannerlord.CharacterReload
+
+
+
+
+https://github.com/int19h/Bannerlord.CSharp.Scripting
+
+
+
+
+https://github.com/RoGreat/MarryAnyone
+
+
+
+
+
+https://www.nexusmods.com/mountandblade2bannerlord/mods/286?tab=description
+https://www.nexusmods.com/mountandblade2bannerlord/mods/2644?tab=description
+
+
+
+
+https://github.com/Barhidous/CulturedStart
+
+
+
+
+
+
+
 
 
 

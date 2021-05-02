@@ -30,14 +30,14 @@ namespace KaosesWages.Settings
         public override string FormatType => Statics.FormatType;
 
         #region ModDebug
-        [SettingPropertyBool("{=debug}Debug", RequireRestart = false, 
-            HintText = "{=debug_desc}Displays mod developer debug information and logs them to the file")]
-        [SettingPropertyGroup("Debug")]
+        //[SettingPropertyBool("{=debug}Debug", RequireRestart = false, 
+        //    HintText = "{=debug_desc}Displays mod developer debug information and logs them to the file")]
+        //[SettingPropertyGroup("Debug")]
         public bool Debug { get; set; } = false;
 
-        [SettingPropertyBool("{=debuglog}Log to file", RequireRestart = false, 
-            HintText = "{=debuglog_desc}Log information messages to the log file as well as errors and debug")]
-        [SettingPropertyGroup("Debug")]
+        //[SettingPropertyBool("{=debuglog}Log to file", RequireRestart = false, 
+        //    HintText = "{=debuglog_desc}Log information messages to the log file as well as errors and debug")]
+        //[SettingPropertyGroup("Debug")]
         public bool LogToFile { get; set; } = false;
 
         public bool LoadMCMConfigFile { get; set; } = false;

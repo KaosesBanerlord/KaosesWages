@@ -68,12 +68,17 @@ namespace KaosesWages.Objects
 
             if (IsMercenary)
             {
+                Logging.Lm("IsMercenary  cost  " + cost.ToString());
+                //cost = MathF.Round((float)cost * mercenaryRecruitCostMultiplier);
                 cost = MathF.Round((float)cost * mercenaryRecruitCostMultiplier);
+                Logging.Lm("IsMercenary  new  " + cost.ToString());
             }
 
             if (IsBandit)
             {
+                Logging.Lm("IsBandit  cost  " + cost.ToString());
                 cost = MathF.Round((float)cost * banditRecruitCostMultiplier);
+                Logging.Lm("IsBandit  new  " + cost.ToString());
             }
 
             if (withHorseAdditional > 0)

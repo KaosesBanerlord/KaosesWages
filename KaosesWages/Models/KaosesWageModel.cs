@@ -245,7 +245,7 @@ namespace KaosesWages.Models
             float num2 = 2f;
             if (flag)
             {
-                num = MathF.Round((float)num * num2);
+                //num = MathF.Round((float)num * num2);
             }
 /*
 

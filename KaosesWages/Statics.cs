@@ -1,5 +1,8 @@
 using KaosesWages.Settings;
+using KaosesWages.Utils;
+using System.Linq;
 using TaleWorlds.CampaignSystem;
+using TaleWorlds.Engine;
 
 namespace KaosesWages
 {
@@ -65,6 +68,39 @@ namespace KaosesWages
                 }
             }
             return isPlayerClan;
+        }
+
+
+
+        public static bool IsMCMLoaded()
+        {
+            bool loaded = false;
+            var modnames = Utilities.GetModulesNames().ToList();
+            if (modnames.Contains("Bannerlord.MBOptionScreen"))// && !overrideSettings
+            {
+                Statics.MCMModuleLoaded = true;
+                loaded = true;
+                Ux.MessageDebug(prePrend + "MCM Module is loaded");
+            }
+            return loaded;
+        }
+
+
+
+        public static bool IsHarmonyLoaded()
+        {
+            bool loaded = false;
+            var modnames = Utilities.GetModulesNames().ToList();
+            //if (modnames.Contains("ModLib") && !overrideSettings)
+            if (modnames.Contains("Bannerlord.Harmony"))// && !overrideSettings
+            {
+                loaded = true;
+                Ux.MessageDebug(prePrend + "Harmony Module is loaded");
+            }else
+            {
+                Ux.MessageError("Failure: " + Statics._settings.ModDisplayName + " Requires Harmony please install the Harmony mod");
+            }
+            return loaded;
         }
 
     }

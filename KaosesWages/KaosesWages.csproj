@@ -1,15 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>0.0.9</Version>
+    <Version>0.1.0</Version>
     <TargetFramework>net472</TargetFramework>
     <Platforms>x64</Platforms>
     <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <ModuleName>$(MSBuildProjectName)</ModuleName>
     <GameFolder>E:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</GameFolder>
-    <Company>Kaoses</Company>
+    <Company>Patrick Scott</Company>
     <Authors>Patrick Scott</Authors>
+    <RepositoryUrl>https://www.nexusmods.com/mountandblade2bannerlord/mods/1333</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
