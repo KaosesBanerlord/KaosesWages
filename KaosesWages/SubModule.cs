@@ -10,40 +10,43 @@ using System.Reflection;
 using TaleWorlds.Library;
 using KaosesWages.Settings;
 using TaleWorlds.CampaignSystem.ViewModelCollection.GameMenu;
+using KaosesWages.Common;
 
 namespace KaosesWages
 {
     public class SubModule : MBSubModuleBase
     {
+        public static ISettingsProviderInterface? _settings;
+        private Harmony _harmony;
+
         protected override void OnBeforeInitialModuleScreenSetAsRoot()
         {
             base.OnBeforeInitialModuleScreenSetAsRoot();
-            ConfigLoader.LoadConfig();
-            if (Statics.IsHarmonyLoaded())
-            {
-                Ux.MessageInfo("Loaded: " + Statics._settings.ModDisplayName);
-            }else
-            {
-                Ux.MessageError(Statics.prePrend + " : Will not function properly with out Harmony ");
-            }
-            
-        }
-
-        protected override void OnSubModuleLoad()
-        {
-            base.OnSubModuleLoad();
             try
             {
-                var harmony = new Harmony("kaoses.wages.patch");
-                harmony.PatchAll(Assembly.GetExecutingAssembly());
+                ConfigLoader.LoadConfig();
+                bool modUsesHarmoney = Statics.UsesHarmony;
+                if (modUsesHarmoney)
+                {
+                    if (Kaoses.IsHarmonyLoaded())
+                    {
+                        IM.DisplayModLoadedMessage();
+                    }
+                    else { IM.DisplayModHarmonyErrorMessage(); }
+                }
+                else { IM.DisplayModLoadedMessage(); }
             }
             catch (Exception ex)
             {
                 //Handle exceptions
-                Logging.Lm(Statics.prePrend + "Error with harmony patch");
-                Logging.Lm(Statics.prePrend + ex.ToString());
+                IM.MessageError("Error loading initial config: " + ex.ToStringFull());
             }
-            
+
+        }
+
+        protected override void OnSubModuleLoad()
+        {
+            base.OnSubModuleLoad();            
         }
 
         protected override void OnGameStart(Game game, IGameStarter gameStarter)
@@ -62,9 +65,41 @@ namespace KaosesWages
             }
         }
 
+        public override void OnGameInitializationFinished(Game game)
+        {
+            // Called 4th after choosing (Resume Game, Campaign, Custom Battle) from the main menu.
+            base.OnGameInitializationFinished(game);
+            if (!(game.GameType is Campaign))
+            {
+                return;
+            }
+
+            try
+            {
+                var harmony = new Harmony(Statics.HarmonyId);
+                harmony.PatchAll(Assembly.GetExecutingAssembly());
+            }
+            catch (Exception ex)
+            {
+                //Handle exceptions
+                IM.MessageError("Error with harmony patch: " + ex.ToStringFull());
+            }
+        }
         protected override void OnSubModuleUnloaded()
         {
             base.OnSubModuleUnloaded();
+        }
+        public override void OnGameEnd(Game game)
+        {
+            try
+            {
+                _harmony?.UnpatchAll(Statics.HarmonyId);
+            }
+            catch (Exception ex)
+            {
+                //Handle exceptions
+                IM.MessageError("Error OnGameEnd harmony un-patch: " + ex.ToStringFull());
+            }
         }
     }
 }

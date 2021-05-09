@@ -73,6 +73,11 @@ upgrade costs, recruitment costs, additional horse troop wages.
 - 0.1.0
     - Fixed Issue with mercenary recruitment costs   
     - Fixed missing dll include
+- 0.1.1
+    - strings file created to make mod translatable
+
+
+
 
 ## Todo
 - Update code and settings page to better reflect clan use over companion.

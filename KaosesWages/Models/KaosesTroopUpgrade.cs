@@ -2,6 +2,7 @@
 using TaleWorlds.CampaignSystem.SandBox.GameComponents;
 using TaleWorlds.CampaignSystem;
 using KaosesWages.Settings;
+using KaosesWages.Common;
 
 namespace KaosesWages.Models
 {
@@ -54,15 +55,15 @@ namespace KaosesWages.Models
             {
                 upgradeCostMultiplier = _settings.playerUpgradeCostMultiplier;
             }
-            else if (Statics.IsPlayerClan(party) && !party.MobileParty.IsMainParty && _settings.bUsePlayerUpgradeCostForClanMembers)
+            else if (Kaoses.IsPlayerClan(party) && !party.MobileParty.IsMainParty && _settings.bUsePlayerUpgradeCostForClanMembers)
             {
                 upgradeCostMultiplier = _settings.playerUpgradeCostMultiplier;
             }
-            else if (Statics.IsPlayerClan(party) && !party.MobileParty.IsMainParty && _settings.bUseAIUpgradeCostMultiplier)
+            else if (Kaoses.IsPlayerClan(party) && !party.MobileParty.IsMainParty && _settings.bUseAIUpgradeCostMultiplier)
             {
                 upgradeCostMultiplier = _settings.AIUpgradeCostMultiplier;
             }
-            else if (_settings.bUseAIUpgradeCostMultiplier && !party.MobileParty.IsMainParty && !Statics.IsPlayerClan(party))
+            else if (_settings.bUseAIUpgradeCostMultiplier && !party.MobileParty.IsMainParty && !Kaoses.IsPlayerClan(party))
             {
                 upgradeCostMultiplier = _settings.AIUpgradeCostMultiplier;
             }

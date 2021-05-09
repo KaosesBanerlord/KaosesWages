@@ -15,12 +15,13 @@ namespace KaosesWages.Settings
     //public class MCMSettings : AttributeGlobalSettings<MCMSettings>, ISettingsProviderInterface 
     public class MCMSettings : AttributeGlobalSettings<MCMSettings>, ISettingsProviderInterface
     {
+        #region ModSettingsStandard
         public override string Id => Statics.InstanceID;
 
         // Build mod display name with name and version form the project properties version
 #pragma warning disable CS8620 // Argument cannot be used for parameter due to differences in the nullability of reference types.
         string modName = Statics.DisplayName;
-        public override string DisplayName => TextObjectHelper.Create("{=testModDisplayName}" + modName + " {VERSION}", new Dictionary<string, TextObject>()
+        public override string DisplayName => TextObjectHelper.Create("{=KWDisplayName}" + modName + " {VERSION}", new Dictionary<string, TextObject>()
         {
             { "VERSION", TextObjectHelper.Create(typeof(MCMSettings).Assembly.GetName().Version?.ToString(3) ?? "")! }
         })!.ToString();
@@ -29,611 +30,574 @@ namespace KaosesWages.Settings
         public override string FolderName => Statics.ModuleFolder;
         public override string FormatType => Statics.FormatType;
 
-        #region ModDebug
-        //[SettingPropertyBool("{=debug}Debug", RequireRestart = false, 
-        //    HintText = "{=debug_desc}Displays mod developer debug information and logs them to the file")]
-        //[SettingPropertyGroup("Debug")]
-        public bool Debug { get; set; } = false;
-
-        //[SettingPropertyBool("{=debuglog}Log to file", RequireRestart = false, 
-        //    HintText = "{=debuglog_desc}Log information messages to the log file as well as errors and debug")]
-        //[SettingPropertyGroup("Debug")]
-        public bool LogToFile { get; set; } = false;
-
         public bool LoadMCMConfigFile { get; set; } = false;
         public string ModDisplayName { get { return DisplayName; } }
         #endregion
 
+        //[SettingPropertyBool("{=debug}Debug", RequireRestart = false, HintText = "{=}{=debug_desc}Displays mod developer debug information and logs them to the file")]
+        //[SettingPropertyGroup("Debug", GroupOrder = 100)]
+        public bool Debug { get; set; } = Statics.Debug;
+
+        //[SettingPropertyBool("{=debuglog}Log to file", RequireRestart = false, HintText = "{=}{=debuglog_desc}Log information messages to the log file as well as errors and debug")]
+        //[SettingPropertyGroup("Debug", GroupOrder = 100)]
+        public bool LogToFile { get; set; } = Statics.LogToFile;
+
 
         ///~ Mod Specific settings 
 
+        #region Debug
 
+        #endregion Debug
+
+
+        ///~ Mod Specific settings 
+
+        //~ BaseRecruitCost
         #region BaseRecruitCost
-        [SettingPropertyBool("Base Recruit Cost Enabled", IsToggle = true, Order = 0, RequireRestart = false,
-            HintText = "Enables modifying native Base recruit cost per tier")]
-        [SettingPropertyGroup("Wages/General/Base Recruit")]
+        [SettingPropertyBool("{=KWM_BRCE}Base Recruit Cost Enabled", IsToggle = true, Order = 0, RequireRestart = false,
+            HintText = "{=KWM_BRCEH}Enables modifying native Base recruit cost per tier")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseRecruit}Base Recruit")]
         public bool UseMCMRecruitBase { get; set; } = false;
 
-        [SettingPropertyInteger("Tier 0 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base cost for recruiting [Native 10].")]
-        [SettingPropertyGroup("Wages/General/Base Recruit")]
+        [SettingPropertyInteger("{=KWM_T0}Tier 0", 1, 2000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BCR1}Base cost for recruiting [Native 10].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseRecruit}Base Recruit")]
         public int tier0RecruitCostBase { get; set; } = 10;
 
-        [SettingPropertyInteger("Tier 1 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base cost for recruiting [Native 20].")]
-        [SettingPropertyGroup("Wages/General/Base Recruit")]
+        [SettingPropertyInteger("{=KWM_T1}Tier 1", 1, 2000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BCR2}Base cost for recruiting [Native 20].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseRecruit}Base Recruit")]
         public int tier1RecruitCostBase { get; set; } = 20;
 
-        [SettingPropertyInteger("Tier 2 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base cost for recruiting [Native 50].")]
-        [SettingPropertyGroup("Wages/General/Base Recruit")]
+        [SettingPropertyInteger("{=KWM_T2}Tier 2", 1, 2000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BCR3}Base cost for recruiting [Native 50].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseRecruit}Base Recruit")]
         public int tier2RecruitCostBase { get; set; } = 50;
 
-        [SettingPropertyInteger("Tier 3 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base cost for recruiting [Native 100].")]
-        [SettingPropertyGroup("Wages/General/Base Recruit")]
+        [SettingPropertyInteger("{=KWM_T3}Tier 3", 1, 2000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BCR4}Base cost for recruiting [Native 100].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseRecruit}Base Recruit")]
         public int tier3RecruitCostBase { get; set; } = 100;
 
-        [SettingPropertyInteger("Tier 4 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base cost for recruiting [Native 200].")]
-        [SettingPropertyGroup("Wages/General/Base Recruit")]
+        [SettingPropertyInteger("{=KWM_T4}Tier 4", 1, 2000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BCR5}Base cost for recruiting [Native 200].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseRecruit}Base Recruit")]
         public int tier4RecruitCostBase { get; set; } = 200;
 
-        [SettingPropertyInteger("Tier 5 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base cost for recruiting [Native 400].")]
-        [SettingPropertyGroup("Wages/General/Base Recruit")]
+        [SettingPropertyInteger("{=KWM_T5}Tier 5", 1, 2000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BCR6}Base cost for recruiting [Native 400].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseRecruit}Base Recruit")]
         public int tier5RecruitCostBase { get; set; } = 400;
 
-        [SettingPropertyInteger("Tier 6 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base cost for recruiting [Native 600].")]
-        [SettingPropertyGroup("Wages/General/Base Recruit")]
+        [SettingPropertyInteger("{=KWM_T6}Tier 6", 1, 2000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BCR7}Base cost for recruiting [Native 600].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseRecruit}Base Recruit")]
         public int tier6RecruitCostBase { get; set; } = 600;
 
-        [SettingPropertyInteger("Tier 7 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base cost for recruiting [Native 1000].")]
-        [SettingPropertyGroup("Wages/General/Base Recruit")]
+        [SettingPropertyInteger("{=KWM_T7}Tier 7", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BCR8}Base cost for recruiting [Native 1000].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseRecruit}Base Recruit")]
         public int tier7RecruitCostBase { get; set; } = 1000;
 
-        [SettingPropertyInteger("Tier Other Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base cost for recruiting [Native 1500].")]
-        [SettingPropertyGroup("Wages/General/Base Recruit")]
+        [SettingPropertyInteger("{=KWM_TO}Tier Other", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BCR9}Base cost for recruiting [Native 1500].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseRecruit}Base Recruit")]
         public int tierOtherRecruitCostBase { get; set; } = 1500;
-        #endregion BaseRecruitCost
+        #endregion //~ BaseRecruitCost
 
+        //~ BaseWageCost
         #region BaseWageCost
-        [SettingPropertyBool("Base wage cost Enabled", IsToggle = true, Order = 0, RequireRestart = false,
-            HintText = "Enables modifying native Base wage cost per tier.")]
-        [SettingPropertyGroup("Wages/General/Base Wages")]
+        [SettingPropertyBool("{=KWM_BWCE}Base wage cost Enabled", IsToggle = true, Order = 0, RequireRestart = false,
+            HintText = "{=KWM_BWCEH}Enables modifying native Base wage cost per tier.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseWages}Base Wages")]
         public bool UseMCMWageBase { get; set; } = false;
 
-        [SettingPropertyInteger("Tier 0 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base wage cost [Native 1].")]
-        [SettingPropertyGroup("Wages/General/Base Wages")]
+        [SettingPropertyInteger("{=KWM_T0}Tier 0", 1, 1000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BWC1}Base wage cost [Native 1].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseWages}Base Wages")]
         public int tier0WagesBase { get; set; } = 1;
 
-        [SettingPropertyInteger("Tier 1 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base wage cost [Native 2].")]
-        [SettingPropertyGroup("Wages/General/Base Wages")]
+        [SettingPropertyInteger("{=KWM_T1}Tier 1", 1, 1000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BWC2}Base wage cost [Native 2].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseWages}Base Wages")]
         public int tier1WagesBase { get; set; } = 2;
 
-        [SettingPropertyInteger("Tier 2 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base wage cost [Native 3].")]
-        [SettingPropertyGroup("Wages/General/Base Wages")]
+        [SettingPropertyInteger("{=KWM_T2}Tier 2", 1, 1000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BWC3}Base wage cost [Native 3].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseWages}Base Wages")]
         public int tier2WagesBase { get; set; } = 3;
 
-        [SettingPropertyInteger("Tier 3 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base wage cost [Native 5].")]
-        [SettingPropertyGroup("Wages/General/Base Wages")]
+        [SettingPropertyInteger("{=KWM_T3}Tier 3", 1, 1000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BWC4}Base wage cost [Native 5].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseWages}Base Wages")]
         public int tier3WagesBase { get; set; } = 5;
 
-        [SettingPropertyInteger("Tier 4 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base wage cost [Native 8].")]
-        [SettingPropertyGroup("Wages/General/Base Wages")]
+        [SettingPropertyInteger("{=KWM_T4}Tier 4", 1, 1000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BWC5}Base wage cost [Native 8].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseWages}Base Wages")]
         public int tier4WagesBase { get; set; } = 8;
 
-        [SettingPropertyInteger("Tier 5 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base wage cost [Native 12].")]
-        [SettingPropertyGroup("Wages/General/Base Wages")]
+        [SettingPropertyInteger("{=KWM_T5}Tier 5", 1, 1000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BWC6}Base wage cost [Native 12].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseWages}Base Wages")]
         public int tier5WagesBase { get; set; } = 12;
 
-        [SettingPropertyInteger("Tier 6 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base wage cost [Native 17].")]
-        [SettingPropertyGroup("Wages/General/Base Wages")]
+        [SettingPropertyInteger("{=KWM_T6}Tier 6", 1, 1000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BWC7}Base wage cost [Native 17].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseWages}Base Wages")]
         public int tier6WagesBase { get; set; } = 17;
 
-        [SettingPropertyInteger("Tier 7 Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base wage cost [Native 23].")]
-        [SettingPropertyGroup("Wages/General/Base Wages")]
+        [SettingPropertyInteger("{=KWM_T7}Tier 7", 1, 1000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BWC8}Base wage cost [Native 23].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseWages}Base Wages")]
         public int tier7WagesBase { get; set; } = 23;
 
-        [SettingPropertyInteger("Tier Other Base", 1, 3000, "0 Denars", Order = 1, RequireRestart = false,
-            HintText = "Base wage cost [Native 33].")]
-        [SettingPropertyGroup("Wages/General/Base Wages")]
+        [SettingPropertyInteger("{=KWM_TO}Tier Other", 1, 1000, "0 Denars", Order = 1, RequireRestart = false,
+            HintText = "{=KWM_BWC9}Base wage cost [Native 33].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_General}General" + "/" + "{=KWM_BaseWages}Base Wages")]
         public int tierOtherWagesBase { get; set; } = 33;
-        #endregion BaseWageCost
+        #endregion //~ BaseWageCost
 
-
-
-        // Player Tiered Wages
+        //~ PlayerWages
         #region PlayerWages
-
-        [SettingPropertyBool("Player wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying Player wage values.")]
-        [SettingPropertyGroup("Wages/Player")]
+        [SettingPropertyBool("{=KWM_PWE}Player wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{KWM_PWEH}Enables modifying Player wage values.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player")]
         public bool bMenuPlayerModifiers { get; set; } = false;
 
-        #region PlayerWagesTroopTiers
-        [SettingPropertyBool("Tier troops wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying Player troops wages by Tier.")]
-        [SettingPropertyGroup("Wages/Player/Wages By Tier")]
-        public bool bUsePlayerTierWagesModifiers { get; set; } = false;
-
-
-        [SettingPropertyBool("Companion Wages as Player Enabled", Order = 0, RequireRestart = false, 
-            HintText = "Enables Companion Troops wages to use same values as player ,else uses AI values.")]
-        [SettingPropertyGroup("Wages/Player")]
+        [SettingPropertyBool("{=KWM_CWAPE}Clan Wages as Player Enabled", Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_CWAPEH}Enables Clan Troops wages to use same values as player ,else uses AI values.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player")]
         public bool bUsePlayerCompanionWagesCostModifiers { get; set; } = false;
 
+        //~ PlayerWagesTroopTiers
+        #region PlayerWagesTroopTiers
+        [SettingPropertyBool("{=KWM_TTWE}Tier troops wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{KWM_TTWEH}Enables modifying Player troops wages by Tier.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
+        public bool bUsePlayerTierWagesModifiers { get; set; } = false;
 
         [SettingPropertyFloatingInteger("Companion Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Companion wages by the multiplier supplied.")]
-        [SettingPropertyGroup("Wages/Player/Wages By Tier")]
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tierPlayerCompanionWagesMultiplier { get; set; } = 1.0f;
 
-        [SettingPropertyFloatingInteger("Tier 0 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 0 wages by the multiplier supplied.")]
-        [SettingPropertyGroup("Wages/Player/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T0}Tier 0", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier0PlayerWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 1 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 1 wages by the multiplier supplied.")]
-        [SettingPropertyGroup("Wages/Player/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T1}Tier 1", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier1PlayerWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 2 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 2 wages by the multiplier supplied.")]
-        [SettingPropertyGroup("Wages/Player/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T2}Tier 2", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier2PlayerWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 3 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 3 wages by the multiplier supplied.")]
-        [SettingPropertyGroup("Wages/Player/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T3}Tier 3", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier3PlayerWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 4 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 4 wages by the multiplier supplied.")]
-        [SettingPropertyGroup("Wages/Player/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T4}Tier 4", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier4PlayerWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 5 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 5 wages by the multiplier supplied.")]
-        [SettingPropertyGroup("Wages/Player/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T5}Tier 5", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier5PlayerWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 6 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 6 wages by the multiplier supplied.")]
-        [SettingPropertyGroup("Wages/Player/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T6}Tier 6", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier6PlayerWagesMultiplier { get; set; } = 1.0f;
 
-        [SettingPropertyFloatingInteger("Tier 7+ Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
-           HintText = "Multiply Troop Tier 7+ wages by the multiplier supplied.")]
-        [SettingPropertyGroup("Wages/Player/Wages By Tier")]
+        [SettingPropertyFloatingInteger("Tier 7+", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
+           HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier7PlayerWagesMultiplier { get; set; } = 1.0f;
-        #endregion
+        #endregion //~ PlayerWagesTroopTiers
 
-
-        //Player Caravan Wages
+        //~ PlayerWagesCaravans
         #region PlayerWagesCaravans
-        [SettingPropertyBool("Caravan wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying Player Caravan troops wages.")]
-        [SettingPropertyGroup("Wages/Player/Caravan Wages")]
+        [SettingPropertyBool("{=KWM_CWE}Caravan wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_CWEH}Enables modifying Caravan troops wages.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_CaravanWages}Caravan Wages")]
         public bool bUsePlayerCaravanWagesModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Caravan Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Caravan Troop wages cost by the multiplier supplied.")]
-        [SettingPropertyGroup("Wages/Player/Caravan Wages")]
+        [SettingPropertyFloatingInteger("{=KWM_CM}Caravan Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_CMH}Multiply Caravan Troop wages cost by the multiplier supplied.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_CaravanWages}Caravan Wages")]
         public float wagesPlayerCaravanMultiplier { get; set; } = 1.0f;
-        #endregion
-        //Player Garrison Wages
+        #endregion //~ PlayerWagesCaravans
 
+        //~ PlayerWagesGarrison
         #region PlayerWagesGarrison
-        [SettingPropertyBool("Garrison wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying Player Garrison troops wages Requires.")]
-        [SettingPropertyGroup("Wages/Player/Garrison Wages")]
+        [SettingPropertyBool("{=KWM_GW}Garrison wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_GWH}Enables modifying Garrison troops wages.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_GarrisonWages}Garrison Wages")]
         public bool bUsePlayerGarrisonWagesModifiers { get; set; } = false;
 
 
         [SettingPropertyFloatingInteger("Garrison Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply Garrison Troop wages cost by the multiplier supplied.")]
-        [SettingPropertyGroup("Wages/Player/Garrison Wages")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_GarrisonWages}Garrison Wages")]
         public float wagesPlayerGarrisonMultiplier { get; set; } = 1.0f;
-        #endregion
-        //Player Mercenary Wages
+        #endregion //~ PlayerWagesGarrison
 
+        //~ PlayerWagesMercenary
         #region PlayerWagesMercenary
-        [SettingPropertyBool("Mercenary wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying Player mercenary wages.")]
-        [SettingPropertyGroup("Wages/Player/Mercenary Wages")]
+        [SettingPropertyBool("{=KWM_MWE}Mercenary wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_MWEH}Enables modifying mercenary wages.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_MercenaryWages}Mercenary Wages")]
         public bool bUsePlayerMercenaryWagesModifiers { get; set; } = false;
 
 
-        [SettingPropertyFloatingInteger("Mercenary Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Mercenary wages cost by the multiplier [Native:2.0].")]
-        [SettingPropertyGroup("Wages/Player/Mercenary Wages")]
+        [SettingPropertyFloatingInteger("{=KWM_MWM}Mercenary Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MWMH}Multiply Troop Mercenary wages cost by the multiplier [Native:2.0].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_MercenaryWages}Mercenary Wages")]
         public float tierPlayerMercenaryWagesMultiplier { get; set; } = 2.0f;
-        #endregion
-        
+        #endregion //~ PlayerWagesMercenary
 
+        //~ PlayerWagesBandit
         #region PlayerWagesBandit
-        [SettingPropertyBool("Bandit wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying Player Bandit wages.")]
-        [SettingPropertyGroup("Wages/Player/Bandit Wages")]
+        [SettingPropertyBool("{=KWM_BWE}Bandit wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_BWEH}Enables modifying Bandit wages.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_Bandit}Bandit")]
         public bool bUsePlayerBanditWagesModifiers { get; set; } = false;
 
-
-        [SettingPropertyFloatingInteger("Bandit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Bandit wages cost by the multiplier [Native: N/A].")]
-        [SettingPropertyGroup("Wages/Player/Bandit Wages")]
+        [SettingPropertyFloatingInteger("{=KWM_BWM}Bandit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_BWMH}Multiply Troop Bandit wages cost by the multiplier [Native: N/A].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_Bandit}Bandit")]
         public float playerBanditWagesMultiplier { get; set; } = 1.5f;
-        #endregion
+        #endregion //~ PlayerWagesBandit
 
+        //~ PlayerWagesHorseTroops
         #region PlayerWagesHorseTroops
-        [SettingPropertyBool("Mounted Additional Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables Player troops with horses additional wage costs.")]
-        [SettingPropertyGroup("Wages/Player/Mounted Wages Cost")]
+        [SettingPropertyBool("{=KWM_MAE}Mounted Additional Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_MAEH}Enables troops with horses to have additional daily wage costs.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_MountedWagesCost}Mounted Wages Cost")]
         public bool bUsePlayerWithHorsesWages { get; set; } = false;
 
-        [SettingPropertyInteger("Mounted daily cost", 0, 1000, "0 Denars", Order = 1, RequireRestart = false, 
-            HintText = "Additional mounted troops daily wage cost  [Native 0].")]
-        [SettingPropertyGroup("Wages/Player/Mounted Wages Cost")]
+        [SettingPropertyInteger("{=KWM_MDC}Mounted daily cost", 0, 1000, "0 Denars", Order = 1, RequireRestart = false, 
+            HintText = "{=KWM_MDCH}Additional mounted troops daily wage cost  [Native 0].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_MountedWagesCost}Mounted Wages Cost")]
         public int tierPlayerHorseWages { get; set; } = 0;
-        #endregion
+        #endregion //~ PlayerWagesHorseTroops
 
-
-        //Player Recruit Costs
+        //~ PlayerWagesRecruitmentCost
         #region PlayerWagesRecruitmentCost
-        [SettingPropertyBool("Recruit Multipliers Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables Player Recruit Troops cost Multipliers.")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyBool("{=KWM_RME}Recruit Multipliers Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_RMEH}Enables Recruit Troops cost Multipliers.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public bool bUsePlayerRecruitCostModifiers { get; set; } = false;
 
         //@todo Does this get used
-        [SettingPropertyBool("Companion cost Multipliers Enabled", Order = 0, RequireRestart = false, 
-            HintText = "Enables Companion Recruit Troops cost to be same as player values else uses AI values.")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyBool("{=KWM_CCSAP}Clan cost same as Player Enabled", Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_CCSAPH}Enables Clan Recruit Troops cost to be same as player values else uses AI values.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public bool bUsePlayerCompanionRecruitCostModifiers { get; set; } = false;
 
-
-        [SettingPropertyFloatingInteger("Tier 0 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 0 Recruit cost by this value.")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T0}Tier 0", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier0PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 1 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
-            HintText = "Multiply Troop Tier 1 Recruit cost by this value.")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T1}Tier 1", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier1PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 2 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 2 Recruit cost by this value.")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T2}Tier 2", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier2PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 3 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 3 Recruit cost by this value.")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T3}Tier 3", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier3PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 4 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 4 Recruit cost by this value.")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T4}Tier 4", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier4PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 5 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 5 Recruit cost by this value.")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T5}Tier 5", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier5PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 6 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 6 Recruit cost by this value.")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T6}Tier 6", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier6PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 7+ Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 7+ Recruit cost by this value.")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T7}Tier 7", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier7PlayerRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Mercenary Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Mercenary Recruit cost by this value [Native:2.0].")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_MCR}Mercenary Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCMH}Multiply Mercenary Recruit cost by the multiplier [Native:2.0].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tierMercenaryPlayerRecruitCostMultiplier { get; set; } = 2.0f;
 
-        [SettingPropertyFloatingInteger("Bandit Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Bandit Recruit cost by this value [Native: N/A].")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_BCR}Bandit Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTBRCM}Multiply Bandit Recruit cost by this value [Native: N/A].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tierBanditPlayerRecruitCostMultiplier { get; set; } = 0.7f;
 
-        [SettingPropertyInteger("Mounted Recruit Tier < 4", 0, 1000, "0 Denars", Order = 1, RequireRestart = false, 
-            HintText = "Mounted additional Recruit cost for troops Tier < 4 [Native:150] .")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyInteger("{=KWM_MRCTL4}Mounted Recruit Tier less than 4", 0, 1000, "0 Denars", Order = 1, RequireRestart = false, 
+            HintText = "{KWM_MTBRCMH}Mounted additional Recruit cost for troops Tier less than 4 [Native:150] .")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public int tierMountedPlayerRecruitCost { get; set; } = 150;
 
-        [SettingPropertyInteger("Mounted Recruit Tier >= 4", 0, 1000, "0 Denars", Order = 1, RequireRestart = false, 
-            HintText = "Mounted additional Recruit cost for troops Tier >= 4 [Native:500].")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyInteger("{KWM_MRCTG4}Mounted Recruit Tier greater than 4", 0, 1000, "0 Denars", Order = 1, RequireRestart = false, 
+            HintText = "{KWM_MARC4}Mounted additional Recruit cost for troops Tier greater than or equal to 4 [Native:500].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public int tierMountedPlayerRecruitHighCost { get; set; } = 500;
 
-        [SettingPropertyFloatingInteger("Companion Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
-            HintText = "Multiply Companion recruitment cost value for being hired by the player [Native:0].")]
-        [SettingPropertyGroup("Wages/Player/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_CMPM}Companion Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
+            HintText = "{=KWM_CRCP}Multiply Companion recruitment cost value for being hired by the player [Native:0].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tierCompanionRecruitCostMultiplier { get; set; } = 1.0f;
-        #endregion
+        #endregion //~ PlayerWagesRecruitmentCost
 
+        //~ PlayerWagesUpgradeCost
         #region PlayerWagesUpgradeCost
-        [SettingPropertyBool("Upgrade cost Multiplier Enable", IsToggle = true, Order = 0, RequireRestart = false,
-            HintText = "Enables Player Troop upgrade cost Multipliers.")]
-        [SettingPropertyGroup("Wages/Player/Upgrade Cost")]
+        [SettingPropertyBool("{=KWM_UCME}Upgrade cost Multiplier Enable", IsToggle = true, Order = 0, RequireRestart = false,
+            HintText = "{=KWM_UCMEH}Enables Player Troop upgrade cost Multipliers.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_UpgradeCost}Upgrade Cost")]
         public bool bUsePlayerUpgradeCostMultiplier { get; set; } = false;
 
-
-        [SettingPropertyFloatingInteger("Upgrade Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
-            HintText = "Multiply the cost of upgrading troops for the player and optionally players clan.")]//
-        [SettingPropertyGroup("Wages/Player/Upgrade Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_UM}Upgrade Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false,
+            HintText = "{=KWM_UMH}Multiply the cost of upgrading troops.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_UpgradeCost}Upgrade Cost")]
         public float playerUpgradeCostMultiplier { get; set; } = 1.0f;
 
         //@todo is this used
-        [SettingPropertyBool("Clan Uses Player Upgrade cost Enabled", Order = 0, RequireRestart = false,
-            HintText = "Enables Clan member Troop upgrade cost to use player Multipliers.")]
-        [SettingPropertyGroup("Wages/Player/Upgrade Cost")]
+        [SettingPropertyBool("{=KWM_CUPUCE}Clan Uses Player Upgrade cost Enabled", Order = 0, RequireRestart = false,
+            HintText = "{=KWM_CUPUCEH}Enables Clan member Troop upgrade cost to use player Multipliers.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_UpgradeCost}Upgrade Cost")]
         public bool bUsePlayerUpgradeCostForClanMembers { get; set; } = true;
-        #endregion
+        #endregion //~ PlayerWagesUpgradeCost
+        #endregion //~ PlayerWages
 
-        #endregion
-
-
+        //~ AIWages
         #region AIWages
-
         [SettingPropertyBool("Modifying AI Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
             HintText = "Enables modifying AI values.")]
-        [SettingPropertyGroup("Wages/AI")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI")]
         public bool bMenuAIModifiers { get; set; } = false;
 
-        [SettingPropertyBool("Modifying AI wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying AI troops wages by Tier.")]
-        [SettingPropertyGroup("Wages/AI/Wages By Tier")]
+        [SettingPropertyBool("{=KWM_MAIE}Modifying AI wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_MAIEH}Enables modifying AI troops wages by Tier.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public bool bUseAITierWagesModifiers { get; set; } = false;
 
-
+        //~ AIWagesTroopWages
         #region AIWagesTroopWages
+/*
         [SettingPropertyFloatingInteger("Companion Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "Multiply AI Troop Companion wages by the multiplier supplied.")]//
-        [SettingPropertyGroup("Wages/AI/Wages By Tier")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_WagesByTier}Wages By Tier")]*/
         public float tierAIHeroWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 0 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 0 wages by the multiplier supplied.")]//
-        [SettingPropertyGroup("Wages/AI/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T0}Tier 0", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier0AIWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 1 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 1 wages by the multiplier supplied.")]//
-        [SettingPropertyGroup("Wages/AI/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T10}Tier 1", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier1AIWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 2 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 2 wages by the multiplier supplied.")]//
-        [SettingPropertyGroup("Wages/AI/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T2}Tier 2", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier2AIWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 3 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 3 wages by the multiplier supplied.")]//
-        [SettingPropertyGroup("Wages/AI/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T3}Tier 3", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier3AIWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 4 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 4 wages by the multiplier supplied.")]//
-        [SettingPropertyGroup("Wages/AI/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T4}Tier 4", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier4AIWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 5 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 5 wages by the multiplier supplied.")]//
-        [SettingPropertyGroup("Wages/AI/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T5}Tier 5", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier5AIWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 6 Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 6 wages by the multiplier supplied.")]//
-        [SettingPropertyGroup("Wages/AI/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T6}Tier 6", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier6AIWagesMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 7+ Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply Troop Tier 7+ wages by the multiplier supplied.")]//
-        [SettingPropertyGroup("Wages/AI/Wages By Tier")]
+        [SettingPropertyFloatingInteger("{=KWM_T7}Tier 7", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTWBM}Multiply Troop wages by the multiplier supplied.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_WagesByTier}Wages By Tier")]
         public float tier7AIWagesMultiplier { get; set; } = 1.0f;
-        #endregion
+        #endregion //~ AIWagesTroopWages
 
+        //~ AIWagesCaravan
         #region AIWagesCaravan
-        [SettingPropertyBool("Caravan wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying AI Caravan troops wages.")]
-        [SettingPropertyGroup("Wages/AI/Caravan Wages")]
+        [SettingPropertyBool("{=KWM_CWE}Caravan wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{KWM_CWEH}Enables modifying Caravan troops wages.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_CaravanWages}Caravan Wages")]
         public bool bUseAICaravanWagesModifiers { get; set; } = false;
 
-
-        [SettingPropertyFloatingInteger("Caravan Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Caravan Troop wages cost by the multiplier supplied.")]//
-        [SettingPropertyGroup("Wages/AI/Caravan Wages")]
+        [SettingPropertyFloatingInteger("{=KWM_CM}Caravan Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_CMH}Multiply Caravan Troop wages cost by the multiplier supplied.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_CaravanWages}Caravan Wages")]
         public float wagesAICaravanMultiplier { get; set; } = 1.0f;
-        #endregion
+        #endregion //~ AIWagesCaravan
 
+        //~ AIWagesGarrison
         #region AIWagesGarrison
-        [SettingPropertyBool("Garrison wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying AI Garrison troops wages")]
-        [SettingPropertyGroup("Wages/AI/Garrison Wages")]
+        [SettingPropertyBool("{KWM_GW}Garrison wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_GWH}Enables modifying Garrison troops wages.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{KWM_GarrisonWages}Garrison Wages")]
         public bool bUseAIGarrisonWagesModifiers { get; set; } = false;
 
-
-        [SettingPropertyFloatingInteger("Garrison Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Garrison Troop wage cost by the multiplier supplied.")]//
-        [SettingPropertyGroup("Wages/AI/Garrison Wages")]
+        [SettingPropertyFloatingInteger("{=KWM_GWM}Garrison Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_GWMH}Multiply Garrison Troop wages cost by the multiplier supplied.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{KWM_GarrisonWages}Garrison Wages")]
         public float wagesAIGarrisonMultiplier { get; set; } = 1.0f;
-        #endregion
+        #endregion //~ AIWagesGarrison
 
+        //~ AIWagesHorseTroops
         #region AIWagesHorseTroops
-        [SettingPropertyBool("Mounted wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying AI troops with horses wages.")]
-        [SettingPropertyGroup("Wages/AI/Mounted Wages")]
+        [SettingPropertyBool("{=KWM_MAE}Mounted Additional Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_MAEH}Enables troops with horses to have additional daily wage costs.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_MountedWagesCost}Mounted Wages Cost")]
         public bool bUseAIWithHorsesWagesModifiers { get; set; } = false;
 
-        [SettingPropertyInteger("Mounted cost", 0, 100, "0 Denars", Order = 1, RequireRestart = false, 
-            HintText = "Additional AI mounted daily wage cost [Native 0].")]
-        [SettingPropertyGroup("Wages/AI/Mounted Wages")]
+        [SettingPropertyInteger("{=KWM_MDC}Mounted daily cost", 0, 100, "0 Denars", Order = 1, RequireRestart = false, 
+            HintText = "{=KWM_MDCH}Additional mounted troops daily wage cost  [Native 0].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_MountedWagesCost}Mounted Wages Cost")]
         public int tierAIHorseWages { get; set; } = 0;
-        #endregion
+        #endregion //~ AIWagesHorseTroops
 
+        //~ AIWagesMercenary
         #region AIWagesMercenary
-        [SettingPropertyBool("Mercenary wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying AI mercenary wages.")]
-        [SettingPropertyGroup("Wages/AI/Mercenary Wages")]
+        [SettingPropertyBool("{=KWM_MWE}Mercenary wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_MWEH}Enables modifying mercenary wages.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_MercenaryWages}Mercenary Wages")]
         public bool bUseAIMercenaryWagesModifiers { get; set; } = false;
 
-
-        [SettingPropertyFloatingInteger("Mercenary Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Mercenary wage cost by the multiplier supplied  [Native 2.0].")]//
-        [SettingPropertyGroup("Wages/AI/Mercenary Wages")]
+        [SettingPropertyFloatingInteger("{=KWM_MWM}Mercenary Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MWMH}Multiply Troop Mercenary wages cost by the multiplier [Native:2.0].")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_MercenaryWages}Mercenary Wages")]
         public float tierAIMercenaryWagesMultiplier { get; set; } = 2.0f;
-        #endregion
+        #endregion //~ AIWagesMercenary
 
+        //~ AIWagesBandit
         #region AIWagesBandit
-        [SettingPropertyBool("Bandit wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables modifying AI Bandit wages.")]
-        [SettingPropertyGroup("Wages/AI/Bandit Wages")]
+        [SettingPropertyBool("{=KWM_BWE}Bandit wages Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_BWEH}Enables modifying Bandit wages.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_Bandit}Bandit")]
         public bool bUseAIBanditWagesModifiers { get; set; } = false;
 
-
-        [SettingPropertyFloatingInteger("Bandit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Bandit wage cost by the multiplier supplied  [Native 0].")]//
-        [SettingPropertyGroup("Wages/AI/Bandit Wages")]
+        [SettingPropertyFloatingInteger("{=KWM_BWM}Bandit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_BWMH}Multiply Troop Bandit wages cost by the multiplier [Native: N/A].")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_Bandit}Bandit")]
         public float tierAIBanditWagesMultiplier { get; set; } = 1.5f;
-        #endregion
+        #endregion //~ AIWagesBandit
 
-        #endregion
-
+        //~ AIWagesAIWagesRecruitCostCost
         #region AIWagesAIWagesRecruitCostCost
-        [SettingPropertyBool("AI Recruit cost Multipliers Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables AI Recruit Troops cost Multipliers.")]
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyBool("{=KWM_RME}Recruit Multipliers Enabled", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_RMEH}Enables Recruit Troops cost Multipliers.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public bool bUseAIRecruitCostModifiers { get; set; } = false;
 
-
-        [SettingPropertyFloatingInteger("Tier 0 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 0 Recruit cost by this value.")]//
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T0}Tier 0", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier0AIRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 1 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 1 Recruit cost by this value.")]//
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T1}Tier 1", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier1AIRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 2 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 2 Recruit cost by this value.")]//
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T2}Tier 2", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier2AIRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 3 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 3 Recruit cost by this value.")]//
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T3}Tier 3", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier3AIRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 4 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 4 Recruit cost by this value.")]//
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T4}Tier 4", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier4AIRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 5 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 5 Recruit cost by this value.")]//
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T5}Tier 5", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier5AIRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 6 Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 6 Recruit cost by this value.")]//
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T6}Tier 6", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier6AIRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-        [SettingPropertyFloatingInteger("Tier 7+ Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Tier 7+ Recruit cost by this value.")]//
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_T7}Tier 7", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tier7AIRecruitCostMultiplier { get; set; } = 1.0f;
 
-
-
-        [SettingPropertyFloatingInteger("Mercenary Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Mercenary Recruit cost by this value  [Native 1.5].")]//
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_MCR}Mercenary Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTRCMH}Multiply Mercenary Recruit cost by the multiplier [Native:2.0].")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tierMercenaryAIRecruitCostMultiplier { get; set; } = 2.0f;
 
-        [SettingPropertyFloatingInteger("Bandit Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply AI Troop Bandit Recruit cost by this value  [Native 1.5].")]//
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_BCR}Bandit Recruit Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{=KWM_MTBRCM}Multiply Bandit Recruit cost by this value [Native: N/A].")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public float tierBanditAIRecruitCostMultiplier { get; set; } = 0.7f;
 
-
-        [SettingPropertyInteger("Mounted Recruit Tier < 4 ", 0, 1000, "0 Denars", Order = 1, RequireRestart = false, 
-            HintText = "AI Troop With Mounts Recruit cost by this value for troops Tier < 4 [Native 150].")]
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyInteger("{=KWM_MRCTL4}Mounted Recruit Tier less than 4", 0, 1000, "0 Denars", Order = 1, RequireRestart = false, 
+            HintText = "{=KWM_MTBRCMH}Mounted additional Recruit cost for troops Tier less than 4 [Native:150] .")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public int tierMountedAIRecruitCost { get; set; } = 150;
 
-
-        [SettingPropertyInteger("Mounted Recruit cost Tier >= 4", 0, 1000, "0 Denars", Order = 1, RequireRestart = false, 
-            HintText = "AI Troop With Mounts Recruit cost by this value for troops Tier >= 4 [Native 500].")]
-        [SettingPropertyGroup("Wages/AI/Recruit Cost")]
+        [SettingPropertyInteger("{=KWM_MRCTG4}Mounted Recruit Tier greater than 4", 0, 1000, "0 Denars", Order = 1, RequireRestart = false, 
+            HintText = "{=KWM_MARC4}Mounted additional Recruit cost for troops Tier greater than or equal to 4 [Native:500].")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
         public int tierMountedAIRecruitHighCost { get; set; } = 500;
-        #endregion
+        #endregion //~ AIWagesAIWagesRecruitCostCost
 
-
+        //~ AIWagesUpgradeCost
         #region AIWagesUpgradeCost
-        [SettingPropertyBool("Enable AI Upgrade cost Multiplier", IsToggle = true, Order = 0, RequireRestart = false, 
-            HintText = "Enables AI Troop upgrade cost Multipliers.")]
-        [SettingPropertyGroup("Wages/AI/Upgrade Cost")]
+        [SettingPropertyBool("{=KWM_UCME}Upgrade cost Multiplier Enable", IsToggle = true, Order = 0, RequireRestart = false, 
+            HintText = "{=KWM_UCMEHAI}Enables AI Troop upgrade cost Multipliers.")]
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_UpgradeCost}Upgrade Cost")]
         public bool bUseAIUpgradeCostMultiplier { get; set; } = true;
 
 
-        [SettingPropertyFloatingInteger("Troop Upgrade Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
-            HintText = "Multiply the cost of upgrading troops for the AI.")]//
-        [SettingPropertyGroup("Wages/AI/Upgrade Cost")]
+        [SettingPropertyFloatingInteger("{=KWM_UM}Upgrade Multiplier", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
+            HintText = "{KWM_UMH}Multiply the cost of upgrading troops.")]//
+        [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=KWM_AI}AI" + "/" + "{=KWM_UpgradeCost}Upgrade Cost")]
         public float AIUpgradeCostMultiplier { get; set; } = 1.0f;
-
-        #endregion
+        #endregion //~ AIWagesUpgradeCost
+        #endregion //~ AIWages
 
 
         public override IDictionary<string, Func<BaseSettings>> GetAvailablePresets()

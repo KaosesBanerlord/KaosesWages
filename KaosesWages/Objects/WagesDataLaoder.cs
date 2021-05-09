@@ -1,4 +1,5 @@
-﻿using KaosesWages.Settings;
+﻿using KaosesWages.Common;
+using KaosesWages.Settings;
 using KaosesWages.Utils;
 using TaleWorlds.CampaignSystem;
 
@@ -36,7 +37,7 @@ namespace KaosesWages.Objects
             }
             else if (mobileParty.IsLordParty || mobileParty.IsGarrison || mobileParty.IsCaravan) 
             {
-                if (Statics.IsPlayerClan(mobileParty))
+                if (Kaoses.IsPlayerClan(mobileParty))
                 {
                     loadPlayerAdditional();
                     if (_settings.bUsePlayerCompanionWagesCostModifiers && _settings.bUsePlayerTierWagesModifiers)

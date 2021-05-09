@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="English" />
+	</tags>
+	<strings>
+    <string id="KWDisplayName" text="Kaoses Wages" />
+    <string id="KWM_BRCE" text="Base Recruit Cost Enabled" />
+    <string id="KWM_BRCEH" text="Enables modifying native Base recruit cost per tier" />
+    <string id="KWM_T0" text="Tier 0" />
+    <string id="KWM_T1" text="Tier 1" />
+    <string id="KWM_T2" text="Tier 2" />
+    <string id="KWM_T3" text="Tier 3" />
+    <string id="KWM_T4" text="Tier 4" />
+    <string id="KWM_T5" text="Tier 5" />
+    <string id="KWM_T6" text="Tier 6" />
+    <string id="KWM_T7" text="Tier 7" />
+    <string id="KWM_TO" text="Tier Other" />
+    <string id="KWM_BCR1" text="Base cost for recruiting [Native 10]." />
+    <string id="KWM_BCR2" text="Base cost for recruiting [Native 20]." />
+    <string id="KWM_BCR3" text="Base cost for recruiting [Native 50]." />
+    <string id="KWM_BCR4" text="Base cost for recruiting [Native 100]." />
+    <string id="KWM_BCR5" text="Base cost for recruiting [Native 200]." />
+    <string id="KWM_BCR6" text="Base cost for recruiting [Native 400]." />
+    <string id="KWM_BCR7" text="Base cost for recruiting [Native 600]." />
+    <string id="KWM_BCR8" text="Base cost for recruiting [Native 1000]." />
+    <string id="KWM_BCR9" text="Base cost for recruiting [Native 1500]." />
+    <string id="KWM_BWCE" text="Base wage cost Enabled" />
+    <string id="KWM_BWCEH" text="Enables modifying native Base wage cost per tier." />
+    <string id="KWM_BWC1" text="Base wage cost [Native 1]." />
+    <string id="KWM_BWC2" text="Base wage cost [Native 2]." />
+    <string id="KWM_BWC3" text="Base wage cost [Native 3]." />
+    <string id="KWM_BWC4" text="Base wage cost [Native 5]." />
+    <string id="KWM_BWC5" text="Base wage cost [Native 8]." />
+    <string id="KWM_BWC6" text="Base wage cost [Native 12]." />
+    <string id="KWM_BWC7" text="Base wage cost [Native 17]." />
+    <string id="KWM_BWC8" text="Base wage cost [Native 23]." />
+    <string id="KWM_BWC9" text="Base wage cost [Native 33]." />
+    <string id="KWM_PWE" text="Player wages Enabled" />
+    <string id="KWM_PWEH" text="Enables modifying Player wage values." />
+    <string id="KWM_TTWE" text="Tier troops wages Enabled" />
+    <string id="KWM_TTWEH" text="Enables modifying troops wages by Tier." />
+    <string id="KWM_CWAPE" text="Clan Wages as Player Enabled" />
+    <string id="KWM_CWAPEH" text="Enables Clan Troops wages to use same values as player ,else uses AI values." />
+    <string id="KWM_CMPM" text="Companion Multiplier" />
+    <string id="KWM_CMPMH" text="Multiply Companion wages by the multiplier supplied." />
+    <string id="KWM_MTWBM" text="Multiply Troop wages by the multiplier supplied." />
+    <string id="KWM_CWE" text="Caravan wages Enabled" />
+    <string id="KWM_CWEH" text="Enables modifying Caravan troops wages." />
+    <string id="KWM_CM" text="Caravan Multiplier" />
+    <string id="KWM_CMH" text="Multiply Caravan Troop wages cost by the multiplier supplied." />
+    <string id="KWM_GW" text="Garrison wages Enabled" />
+    <string id="KWM_GWH" text="Enables modifying Garrison troops wages." />
+    <string id="KWM_GWM" text="Garrison Multiplier" />
+    <string id="KWM_GWMH" text="Multiply Garrison Troop wages cost by the multiplier supplied." />
+    <string id="KWM_MWE" text="Mercenary wages Enabled" />
+    <string id="KWM_MWEH" text="Enables modifying mercenary wages." />
+    <string id="KWM_MWM" text="Mercenary Multiplier" />
+    <string id="KWM_MWMH" text="Multiply Troop Mercenary wages cost by the multiplier [Native:2.0]." />
+    <string id="KWM_BWE" text="Bandit wages Enabled" />
+    <string id="KWM_BWEH" text="Enables modifying Bandit wages." />
+    <string id="KWM_BWM" text="Bandit Multiplier" />
+    <string id="KWM_BWMH" text="Multiply Troop Bandit wages cost by the multiplier [Native: N/A]." />
+    <string id="KWM_MAE" text="Mounted Additional Enabled" />
+    <string id="KWM_MAEH" text="Enables troops with horses to have additional daily wage costs." />
+    <string id="KWM_MDC" text="Mounted daily cost" />
+    <string id="KWM_MDCH" text="Additional mounted troops daily wage cost  [Native 0]." />
+    <string id="KWM_RME" text="Recruit Multipliers Enabled" />
+    <string id="KWM_RMEH" text="Enables Recruit Troops cost Multipliers." />
+    <string id="KWM_CCSAP" text="Clan cost same as Player Enabled" />
+    <string id="KWM_CCSAPH" text="Enables Clan Recruit Troops cost to be same as player values else uses AI values." />
+    <string id="KWM_MTRCM" text="Multiply Troop Recruit cost by the multiplier." />
+    <string id="KWM_MTRCMH" text="Multiply Mercenary Recruit cost by the multiplier [Native:2.0]." />
+    <string id="KWM_MTBRCM" text="Multiply Bandit Recruit cost by this value [Native: N/A]." />
+    <string id="KWM_MTBRCMH" text="Mounted additional Recruit cost for troops Tier less than 4 [Native:150] ." />
+    <string id="KWM_MARC4" text="Mounted additional Recruit cost for troops Tier greater than or equal to 4 [Native:500]." />
+    <string id="KWM_CRCP" text="Multiply Companion recruitment cost value for being hired by the player [Native:0]." />
+    <string id="KWM_UCME" text="Upgrade cost Multiplier Enable" />
+    <string id="KWM_UCMEH" text="Enables Player Troop upgrade cost Multipliers." />
+    <string id="KWM_UCMEHAI" text="Enables AI Troop upgrade cost Multipliers." />
+    <string id="KWM_UM" text="Upgrade Multiplier" />
+    <string id="KWM_UMH" text="Multiply the cost of upgrading troops." />
+    <string id="KWM_CUPUCE" text="Clan Uses Player Upgrade cost Enabled" />
+    <string id="KWM_CUPUCEH" text="Enables Clan member Troop upgrade cost to use player Multipliers." />
+    <string id="KWM_MCR" text="Mercenary Recruit Multiplier" />
+    <string id="KWM_BCR" text="Bandit Recruit Multiplier" />
+    <string id="KWM_MRCTL4" text="Mounted Recruit Tier less than 4" />
+    <string id="KWM_MRCTG4" text="Mounted Recruit Tier greater than 4" />
+    <string id="KWM_MAIE" text="Modifying AI Enabled" />
+    <string id="KWM_MAIEH" text="Enables modifying AI values." />
+    <string id="KWM_AI" text="AI" />
+    <string id="KWM_Wages" text="Wages" />
+    <string id="KWM_General" text="General" />
+    <string id="KWM_BaseRecruit" text="Base Recruit" />
+    <string id="KWM_BaseWages" text="Base Wages" />
+    <string id="KWM_Player" text="Player" />
+    <string id="KWM_Bandit" text="Bandit" />
+    <string id="KWM_WagesByTier" text="Wages By Tier" />
+    <string id="KWM_CaravanWages" text="Caravan Wages" />
+    <string id="KWM_GarrisonWages" text="Garrison Wages" />
+    <string id="KWM_MercenaryWages" text="Mercenary Wages" />
+    <string id="KWM_MountedWagesCost" text="Mounted Wages Cost" />
+    <string id="KWM_RecruitCost" text="Recruit Cost" />
+    <string id="KWM_UpgradeCost" text="Upgrade Cost" />
+  </strings>
+</base>

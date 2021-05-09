@@ -11,7 +11,11 @@ namespace KaosesWages.Patches
     class TooltipVMExtensionsPatch
     {
 
-        [HarmonyPatch(typeof(TooltipVMExtensions), "UpdateTooltip", new Type[] { typeof(TooltipVM), typeof(CharacterObject) })] //tooltipVM,  character
+        [HarmonyPatch(typeof(TooltipVMExtensions), "UpdateTooltip", 
+            new Type[] { 
+                typeof(TooltipVM), 
+                typeof(CharacterObject) 
+            })] //tooltipVM,  character
         public class UpdateTooltipPatch
         {
             static void Postfix(TooltipVM tooltipVM, CharacterObject character)//TooltipVM __instance,
