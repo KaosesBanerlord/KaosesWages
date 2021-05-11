@@ -75,6 +75,8 @@ upgrade costs, recruitment costs, additional horse troop wages.
     - Fixed missing dll include
 - 0.1.1
     - strings file created to make mod translatable
+- 0.1.2
+    - Updated for 1.5.10
 
 
 
