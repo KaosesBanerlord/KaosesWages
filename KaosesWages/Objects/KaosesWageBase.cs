@@ -1,5 +1,4 @@
-﻿using KaosesWages.Utils;
-using TaleWorlds.CampaignSystem;
+﻿using TaleWorlds.CampaignSystem;
 using TaleWorlds.Library;
 
 namespace KaosesWages.Objects
@@ -68,17 +67,13 @@ namespace KaosesWages.Objects
 
             if (IsMercenary)
             {
-                Logging.Lm("IsMercenary  cost  " + cost.ToString());
                 //cost = MathF.Round((float)cost * mercenaryRecruitCostMultiplier);
                 cost = MathF.Round((float)cost * mercenaryRecruitCostMultiplier);
-                Logging.Lm("IsMercenary  new  " + cost.ToString());
             }
 
             if (IsBandit)
             {
-                Logging.Lm("IsBandit  cost  " + cost.ToString());
                 cost = MathF.Round((float)cost * banditRecruitCostMultiplier);
-                Logging.Lm("IsBandit  new  " + cost.ToString());
             }
 
             if (withHorseAdditional > 0)
@@ -171,65 +166,65 @@ namespace KaosesWages.Objects
 
         public void DumpVariables()
         {
-            Logging.Lm(" *********************************************************** ");
-            Logging.Lm("KaosesWageBase: DumpVariables ");
-            Logging.Lm("tier0WageBase: " + tier0WageBase);
-            Logging.Lm("tier1WageBase: " + tier1WageBase);
-            Logging.Lm("tier2WageBase: " + tier2WageBase);
-            Logging.Lm("tier3WageBase: " + tier3WageBase);
-            Logging.Lm("tier4WageBase: " + tier4WageBase);
-            Logging.Lm("tier5WageBase: " + tier5WageBase);
-            Logging.Lm("tier6WageBase: " + tier6WageBase);
-            Logging.Lm("tier7WageBase: " + tier7WageBase);
-            Logging.Lm("tierOtherWageBase: " + tierOtherWageBase);
-            Logging.Lm(" ");
-            Logging.Lm("UseCaravanWagesModifiers: " + UseCaravanWagesModifiers);
-            Logging.Lm("UseGarrisonWagesModifiers: " + UseGarrisonWagesModifiers);
-            Logging.Lm("UseMercenaryWagesMultiplier: " + UseMercenaryWagesMultiplier);
-            Logging.Lm("UseBanditWagesModifiers: " + UseBanditWagesModifiers);
-            Logging.Lm(" ");
-            Logging.Lm("tierHeroWageMultiplier: " + tierHeroWageMultiplier);
-            Logging.Lm("tier0WageMultiplier: " + tier0WageMultiplier);
-            Logging.Lm("tier1WageMultiplier: " + tier1WageMultiplier);
-            Logging.Lm("tier2WageMultiplier: " + tier2WageMultiplier);
-            Logging.Lm("tier3WageMultiplier: " + tier3WageMultiplier);
-            Logging.Lm("tier4WageMultiplier: " + tier4WageMultiplier);
-            Logging.Lm("tier5WageMultiplier: " + tier5WageMultiplier);
-            Logging.Lm("tier6WageMultiplier: " + tier6WageMultiplier);
-            Logging.Lm("tier7WageMultiplier: " + tier7WageMultiplier);
-            Logging.Lm(" ");
-            Logging.Lm("mercenaryWageMultiplier: " + mercenaryWageMultiplier);
-            Logging.Lm("BanditWageMultiplier: " + BanditWageMultiplier);
-            Logging.Lm("garrisonWageMultiplier: " + garrisonWageMultiplier);
-            Logging.Lm("caravanWageMultiplier: " + caravanWageMultiplier);
-            Logging.Lm("withHorsesWageCost: " + withHorsesWageCost);
-            Logging.Lm(" ");
-            Logging.Lm(" ");
-            Logging.Lm(" ");
-            Logging.Lm("tier0RecruitCostBase: " + tier0RecruitCostBase);
-            Logging.Lm("tier1RecruitCostBase: " + tier1RecruitCostBase);
-            Logging.Lm("tier2RecruitCostBase: " + tier2RecruitCostBase);
-            Logging.Lm("tier3RecruitCostBase: " + tier3RecruitCostBase);
-            Logging.Lm("tier4RecruitCostBase: " + tier4RecruitCostBase);
-            Logging.Lm("tier5RecruitCostBase: " + tier5RecruitCostBase);
-            Logging.Lm("tier6RecruitCostBase: " + tier6RecruitCostBase);
-            Logging.Lm("tier7RecruitCostBase: " + tier7RecruitCostBase);
-            Logging.Lm(" ");
-            Logging.Lm("tierOtherRecruitCostBase: " + tierOtherRecruitCostBase);
-            Logging.Lm("tier0RecruitCostMultiplier: " + tier0RecruitCostMultiplier);
-            Logging.Lm("tier1RecruitCostMultiplier: " + tier1RecruitCostMultiplier);
-            Logging.Lm("tier2RecruitCostMultiplier: " + tier2RecruitCostMultiplier);
-            Logging.Lm("tier3RecruitCostMultiplier: " + tier3RecruitCostMultiplier);
-            Logging.Lm("tier4RecruitCostMultiplier: " + tier4RecruitCostMultiplier);
-            Logging.Lm("tier5RecruitCostMultiplier: " + tier5RecruitCostMultiplier);
-            Logging.Lm("tier6RecruitCostMultiplier: " + tier6RecruitCostMultiplier);
-            Logging.Lm("tier7RecruitCostMultiplier: " + tier7RecruitCostMultiplier);
-            Logging.Lm(" ");
-            Logging.Lm("withHorsesRecriutCost: " + withHorsesRecriutCost);
-            Logging.Lm("withHorsesRecriutHighCost: " + withHorsesRecriutHighCost);
-            Logging.Lm("mercenaryRecruitCostMultiplier: " + mercenaryRecruitCostMultiplier);
-            Logging.Lm("banditRecruitCostMultiplier: " + banditRecruitCostMultiplier);
-            Logging.Lm(" ");
+            KaosesCommon.Utils.Logger.Lm(" *********************************************************** ");
+            KaosesCommon.Utils.Logger.Lm("KaosesWageBase: DumpVariables ");
+            KaosesCommon.Utils.Logger.Lm("tier0WageBase: " + tier0WageBase);
+            KaosesCommon.Utils.Logger.Lm("tier1WageBase: " + tier1WageBase);
+            KaosesCommon.Utils.Logger.Lm("tier2WageBase: " + tier2WageBase);
+            KaosesCommon.Utils.Logger.Lm("tier3WageBase: " + tier3WageBase);
+            KaosesCommon.Utils.Logger.Lm("tier4WageBase: " + tier4WageBase);
+            KaosesCommon.Utils.Logger.Lm("tier5WageBase: " + tier5WageBase);
+            KaosesCommon.Utils.Logger.Lm("tier6WageBase: " + tier6WageBase);
+            KaosesCommon.Utils.Logger.Lm("tier7WageBase: " + tier7WageBase);
+            KaosesCommon.Utils.Logger.Lm("tierOtherWageBase: " + tierOtherWageBase);
+            KaosesCommon.Utils.Logger.Lm(" ");
+            KaosesCommon.Utils.Logger.Lm("UseCaravanWagesModifiers: " + UseCaravanWagesModifiers);
+            KaosesCommon.Utils.Logger.Lm("UseGarrisonWagesModifiers: " + UseGarrisonWagesModifiers);
+            KaosesCommon.Utils.Logger.Lm("UseMercenaryWagesMultiplier: " + UseMercenaryWagesMultiplier);
+            KaosesCommon.Utils.Logger.Lm("UseBanditWagesModifiers: " + UseBanditWagesModifiers);
+            KaosesCommon.Utils.Logger.Lm(" ");
+            KaosesCommon.Utils.Logger.Lm("tierHeroWageMultiplier: " + tierHeroWageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier0WageMultiplier: " + tier0WageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier1WageMultiplier: " + tier1WageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier2WageMultiplier: " + tier2WageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier3WageMultiplier: " + tier3WageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier4WageMultiplier: " + tier4WageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier5WageMultiplier: " + tier5WageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier6WageMultiplier: " + tier6WageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier7WageMultiplier: " + tier7WageMultiplier);
+            KaosesCommon.Utils.Logger.Lm(" ");
+            KaosesCommon.Utils.Logger.Lm("mercenaryWageMultiplier: " + mercenaryWageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("BanditWageMultiplier: " + BanditWageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("garrisonWageMultiplier: " + garrisonWageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("caravanWageMultiplier: " + caravanWageMultiplier);
+            KaosesCommon.Utils.Logger.Lm("withHorsesWageCost: " + withHorsesWageCost);
+            KaosesCommon.Utils.Logger.Lm(" ");
+            KaosesCommon.Utils.Logger.Lm(" ");
+            KaosesCommon.Utils.Logger.Lm(" ");
+            KaosesCommon.Utils.Logger.Lm("tier0RecruitCostBase: " + tier0RecruitCostBase);
+            KaosesCommon.Utils.Logger.Lm("tier1RecruitCostBase: " + tier1RecruitCostBase);
+            KaosesCommon.Utils.Logger.Lm("tier2RecruitCostBase: " + tier2RecruitCostBase);
+            KaosesCommon.Utils.Logger.Lm("tier3RecruitCostBase: " + tier3RecruitCostBase);
+            KaosesCommon.Utils.Logger.Lm("tier4RecruitCostBase: " + tier4RecruitCostBase);
+            KaosesCommon.Utils.Logger.Lm("tier5RecruitCostBase: " + tier5RecruitCostBase);
+            KaosesCommon.Utils.Logger.Lm("tier6RecruitCostBase: " + tier6RecruitCostBase);
+            KaosesCommon.Utils.Logger.Lm("tier7RecruitCostBase: " + tier7RecruitCostBase);
+            KaosesCommon.Utils.Logger.Lm(" ");
+            KaosesCommon.Utils.Logger.Lm("tierOtherRecruitCostBase: " + tierOtherRecruitCostBase);
+            KaosesCommon.Utils.Logger.Lm("tier0RecruitCostMultiplier: " + tier0RecruitCostMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier1RecruitCostMultiplier: " + tier1RecruitCostMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier2RecruitCostMultiplier: " + tier2RecruitCostMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier3RecruitCostMultiplier: " + tier3RecruitCostMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier4RecruitCostMultiplier: " + tier4RecruitCostMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier5RecruitCostMultiplier: " + tier5RecruitCostMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier6RecruitCostMultiplier: " + tier6RecruitCostMultiplier);
+            KaosesCommon.Utils.Logger.Lm("tier7RecruitCostMultiplier: " + tier7RecruitCostMultiplier);
+            KaosesCommon.Utils.Logger.Lm(" ");
+            KaosesCommon.Utils.Logger.Lm("withHorsesRecriutCost: " + withHorsesRecriutCost);
+            KaosesCommon.Utils.Logger.Lm("withHorsesRecriutHighCost: " + withHorsesRecriutHighCost);
+            KaosesCommon.Utils.Logger.Lm("mercenaryRecruitCostMultiplier: " + mercenaryRecruitCostMultiplier);
+            KaosesCommon.Utils.Logger.Lm("banditRecruitCostMultiplier: " + banditRecruitCostMultiplier);
+            KaosesCommon.Utils.Logger.Lm(" ");
         }
 
     }

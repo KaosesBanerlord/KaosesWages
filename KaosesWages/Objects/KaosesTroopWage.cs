@@ -1,4 +1,5 @@
-﻿using TaleWorlds.CampaignSystem;
+﻿using System.Diagnostics;
+using TaleWorlds.CampaignSystem;
 using TaleWorlds.Library;
 
 namespace KaosesWages.Objects
@@ -35,6 +36,15 @@ namespace KaosesWages.Objects
 
 
 
+        // Token: 0x06002D7A RID: 11642 RVA: 0x000B55D0 File Offset: 0x000B37D0
+        public int GetCharacterWage(int tier)
+        {
+            int result = 23;
+            float multiplier = GetWageMultiplierForTier(tier);
+            int wageBase = GetWageBaseForTier(tier);
+            result = MathF.Round((float)wageBase * multiplier);
+            return result;
+        }
 
         private int GetWageBaseForTier(int troopTier)
         {

@@ -19,7 +19,7 @@ namespace KaosesWages.Patches
         {
             static void Postfix(PartyVM __instance, PartyCharacterVM ____currentCharacter, string ____currentCharacterWageLbl)
             {
-                //Logging.Lm("RefreshCurrentCharacterInformationPatch");
+                //Logger.Lm("RefreshCurrentCharacterInformationPatch");
                 KaosesTroopWage troopWage = new KaosesTroopWage();
                 WagesDataLaoder wageData = new WagesDataLaoder(ref troopWage);
 
@@ -30,11 +30,11 @@ namespace KaosesWages.Patches
                     //____currentCharacterWageLbl = ____currentCharacter.Character.TroopWage.ToString();
                     //____currentCharacterWageLbl = wage.ToString();
                     __instance.CurrentCharacterWageLbl = wage.ToString();
-                    //Logging.lm("RefreshCurrentCharacterInformationPatch flag:" + flag.ToString());
-                    //Logging.lm("RefreshCurrentCharacterInformationPatch Type: " + ____currentCharacter.Type.ToString());
-                    //Logging.lm("RefreshCurrentCharacterInformationPatch Wage: " + wage.ToString() + "  Old Wage: " + ____currentCharacter.Character.TroopWage.ToString());
+                    //Logger.Lm("RefreshCurrentCharacterInformationPatch flag:" + flag.ToString());
+                    //Logger.Lm("RefreshCurrentCharacterInformationPatch Type: " + ____currentCharacter.Type.ToString());
+                    //Logger.Lm("RefreshCurrentCharacterInformationPatch Wage: " + wage.ToString() + "  Old Wage: " + ____currentCharacter.Character.TroopWage.ToString());
                 }
-                //Logging.lm("RefreshCurrentCharacterInformationPatch __instance:" + __instance.GetType().ToString());
+                //Logger.Lm("RefreshCurrentCharacterInformationPatch __instance:" + __instance.GetType().ToString());
             }
         }
 

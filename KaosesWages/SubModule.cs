@@ -1,22 +1,19 @@
 ﻿using System;
 using TaleWorlds.MountAndBlade;
-using KaosesWages.Utils;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
-using StoryMode;
 using KaosesWages.Models;
 using HarmonyLib;
 using System.Reflection;
-using TaleWorlds.Library;
 using KaosesWages.Settings;
-using TaleWorlds.CampaignSystem.ViewModelCollection.GameMenu;
-using KaosesWages.Common;
+using KaosesCommon.Utils;
+using KaosesCommon;
 
 namespace KaosesWages
 {
     public class SubModule : MBSubModuleBase
     {
-        public static ISettingsProviderInterface? _settings;
+        public static MCMSettings? _settings;
         private Harmony _harmony;
 
         protected override void OnBeforeInitialModuleScreenSetAsRoot()
@@ -31,6 +28,20 @@ namespace KaosesWages
                     if (Kaoses.IsHarmonyLoaded())
                     {
                         IM.DisplayModLoadedMessage();
+                        try
+                        {
+                            if (_harmony == null)
+                            {
+                                _harmony = new Harmony(Statics.HarmonyId);
+                                _harmony.PatchAll(Assembly.GetExecutingAssembly());
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            IM.ShowError("Error with harmony patch", "Kaoses Parties error", ex);
+                        }
+
                     }
                     else { IM.DisplayModHarmonyErrorMessage(); }
                 }
@@ -38,10 +49,8 @@ namespace KaosesWages
             }
             catch (Exception ex)
             {
-                //Handle exceptions
-                IM.MessageError("Error loading initial config: " + ex.ToStringFull());
+                IM.ShowError("Error loading", "initial Mod Data", ex);
             }
-
         }
 
         protected override void OnSubModuleLoad()
@@ -73,17 +82,6 @@ namespace KaosesWages
             {
                 return;
             }
-
-            try
-            {
-                var harmony = new Harmony(Statics.HarmonyId);
-                harmony.PatchAll(Assembly.GetExecutingAssembly());
-            }
-            catch (Exception ex)
-            {
-                //Handle exceptions
-                IM.MessageError("Error with harmony patch: " + ex.ToStringFull());
-            }
         }
         protected override void OnSubModuleUnloaded()
         {
@@ -91,15 +89,6 @@ namespace KaosesWages
         }
         public override void OnGameEnd(Game game)
         {
-            try
-            {
-                _harmony?.UnpatchAll(Statics.HarmonyId);
-            }
-            catch (Exception ex)
-            {
-                //Handle exceptions
-                IM.MessageError("Error OnGameEnd harmony un-patch: " + ex.ToStringFull());
-            }
         }
     }
 }

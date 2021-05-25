@@ -2,7 +2,7 @@
 using TaleWorlds.CampaignSystem.SandBox.GameComponents;
 using TaleWorlds.CampaignSystem;
 using KaosesWages.Settings;
-using KaosesWages.Common;
+using KaosesCommon;
 
 namespace KaosesWages.Models
 {
@@ -49,7 +49,7 @@ namespace KaosesWages.Models
 
        protected float GetUpgradeMultiplier(PartyBase party)
         {
-            ISettingsProviderInterface? _settings = Statics._settings;
+            MCMSettings? _settings = Statics._settings;
             float upgradeCostMultiplier = 1.0f;
             if (party != null && party.MobileParty.IsMainParty && _settings.bUsePlayerUpgradeCostMultiplier)
             {

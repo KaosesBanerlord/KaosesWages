@@ -13,7 +13,7 @@ namespace KaosesWages.Settings
 {
     //public class MCMSettings : AttributePerSaveSettings<MCMSettings>, ISettingsProviderInterface
     //public class MCMSettings : AttributeGlobalSettings<MCMSettings>, ISettingsProviderInterface 
-    public class MCMSettings : AttributeGlobalSettings<MCMSettings>, ISettingsProviderInterface
+    public class MCMSettings : AttributeGlobalSettings<MCMSettings>//, ISettingsProviderInterface
     {
         #region ModSettingsStandard
         public override string Id => Statics.InstanceID;
@@ -168,7 +168,7 @@ namespace KaosesWages.Settings
         [SettingPropertyBool("{=KWM_CWAPE}Clan Wages as Player Enabled", Order = 0, RequireRestart = false, 
             HintText = "{=KWM_CWAPEH}Enables Clan Troops wages to use same values as player ,else uses AI values.")]
         [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player")]
-        public bool bUsePlayerCompanionWagesCostModifiers { get; set; } = false;
+        public bool PlayerClanWagesSameAsPlayer { get; set; } = false;
 
         //~ PlayerWagesTroopTiers
         #region PlayerWagesTroopTiers
@@ -302,7 +302,7 @@ namespace KaosesWages.Settings
         [SettingPropertyBool("{=KWM_CCSAP}Clan cost same as Player Enabled", Order = 0, RequireRestart = false, 
             HintText = "{=KWM_CCSAPH}Enables Clan Recruit Troops cost to be same as player values else uses AI values.")]
         [SettingPropertyGroup("{=KWM_Wages}Wages" + "/" + "{=Player}Player" + "/" + "{=KWM_RecruitCost}Recruit Cost")]
-        public bool bUsePlayerCompanionRecruitCostModifiers { get; set; } = false;
+        public bool ClanUsesPLayerRecruitCostModifiers { get; set; } = false;
 
         [SettingPropertyFloatingInteger("{=KWM_T0}Tier 0", 0.1f, 10.0f, "#0%", Order = 2, RequireRestart = false, 
             HintText = "{=KWM_MTRCM}Multiply Troop Recruit cost by the multiplier.")]
@@ -632,7 +632,7 @@ namespace KaosesWages.Settings
                 tier7WagesBase = 23,
                 tierOtherWagesBase = 33,
                 bUsePlayerTierWagesModifiers = false,
-                bUsePlayerCompanionWagesCostModifiers = false,
+                PlayerClanWagesSameAsPlayer = false,
                 tierPlayerCompanionWagesMultiplier = 1.0f,
                 tier0PlayerWagesMultiplier = 1.0f,
                 tier1PlayerWagesMultiplier = 1.0f,
@@ -653,7 +653,7 @@ namespace KaosesWages.Settings
                 bUsePlayerWithHorsesWages = false,
                 tierPlayerHorseWages = 0,
                 bUsePlayerRecruitCostModifiers = false,
-                bUsePlayerCompanionRecruitCostModifiers = false,
+                ClanUsesPLayerRecruitCostModifiers = false,
                 tier0PlayerRecruitCostMultiplier = 1.0f,
                 tier1PlayerRecruitCostMultiplier = 1.0f,
                 tier2PlayerRecruitCostMultiplier = 1.0f,
@@ -738,7 +738,7 @@ namespace KaosesWages.Settings
                 tier7WagesBase = 42,
                 tierOtherWagesBase = 56,
                 bUsePlayerTierWagesModifiers = false,
-                bUsePlayerCompanionWagesCostModifiers = false,
+                PlayerClanWagesSameAsPlayer = false,
                 tierPlayerCompanionWagesMultiplier = 1.0f,
                 tier0PlayerWagesMultiplier = 1.0f,
                 tier1PlayerWagesMultiplier = 1.0f,
@@ -759,7 +759,7 @@ namespace KaosesWages.Settings
                 bUsePlayerWithHorsesWages = true,
                 tierPlayerHorseWages = 2,
                 bUsePlayerRecruitCostModifiers = true,
-                bUsePlayerCompanionRecruitCostModifiers = true,
+                ClanUsesPLayerRecruitCostModifiers = true,
                 tier0PlayerRecruitCostMultiplier = 1.0f,
                 tier1PlayerRecruitCostMultiplier = 1.0f,
                 tier2PlayerRecruitCostMultiplier = 1.0f,

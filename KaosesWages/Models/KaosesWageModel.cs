@@ -1,14 +1,13 @@
 ﻿using Helpers;
 using KaosesWages.Objects;
-using KaosesWages.Utils;
 using System;
-using System.Collections.Generic;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SandBox.GameComponents.Party;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using System.Linq;
 using TaleWorlds.Core;
+
 /*
 public sealed class GameModels : GameModelsManager
 */
@@ -124,6 +123,13 @@ namespace KaosesWages.Models
                     num16 = (int)tgarrisonCost;
                 }
             }
+
+            if (troopWages.UseCaravanWagesModifiers && mobileParty.IsCaravan)
+            {
+                float tCaravanCost = MathF.Round((float)num16 * troopWages.caravanWageMultiplier);
+                num16 = (int)tCaravanCost;
+            }
+
             ExplainedNumber result = new ExplainedNumber((float)num16, includeDescriptions, null);
             ExplainedNumber explainedNumber2 = new ExplainedNumber(1f, false, null);
             
@@ -233,8 +239,8 @@ namespace KaosesWages.Models
             }
             catch (Exception e)
             {
-                Logging.Lm(e.Message.ToString());
-                Logging.Lm(e.ToString());
+                KaosesCommon.Utils.Logger.Lm(e.Message.ToString());
+                KaosesCommon.Utils.Logger.Lm(e.ToString());
             }
 
             //int num = 10 * MathF.Round((float)troop.Level * MathF.Pow((float)troop.Level, 0.65f) * 0.2f);
@@ -252,7 +258,7 @@ namespace KaosesWages.Models
             if (troop.IsHero)
             {
                 float temp = num * 2;
-                Logging.Lm("Recruit target is Hero original cost :"+ num.ToString()+"  new cost would be :"+ temp.ToString());
+                Logger.Lm("Recruit target is Hero original cost :"+ num.ToString()+"  new cost would be :"+ temp.ToString());
             }
 */
 

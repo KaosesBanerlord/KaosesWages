@@ -77,8 +77,11 @@ upgrade costs, recruitment costs, additional horse troop wages.
     - strings file created to make mod translatable
 - 0.1.2
     - Updated for 1.5.10
-
-
+- 0.1.3
+    - Fixed bug which applied caravan wages multiplier to main party
+- 0.1.4 
+    - Updated Code for 1.5.10 using wages to make party and garrison size decisions.
+    - fixed a couple of calls that hadnt not been fixed to work for clan member instead of companions.
 
 
 ## Todo

@@ -1,14 +1,12 @@
+using Bannerlord.BUTR.Shared.Helpers;
 using KaosesWages.Settings;
-using KaosesWages.Utils;
-using System.Linq;
-using TaleWorlds.CampaignSystem;
-using TaleWorlds.Engine;
+using System.Reflection;
 
 namespace KaosesWages
 {
     public static class Statics
     {
-        public static ISettingsProviderInterface? _settings;
+        public static MCMSettings? _settings;
         public const string ModuleFolder = "KaosesWages";
         public const string InstanceID = ModuleFolder;
         public const string DisplayName = "Kaoses Wages";
@@ -17,6 +15,8 @@ namespace KaosesWages
         public const string ConfigFilePath = @"..\\..\\Modules\\" + ModuleFolder + "\\config.json";
         public static string PrePrend { get; set; } = DisplayName;
         public const string HarmonyId = ModuleFolder + ".harmony";
+        public static string GameVersion = ApplicationVersionHelper.GameVersionStr();
+        public static string ModVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
         public const bool UsesHarmony = true;
 
         #region MCMConfigValues
@@ -29,8 +29,8 @@ namespace KaosesWages
 
 
         //~DEBUG
-        public static bool Debug { get; set; } = false;
-        public static bool LogToFile { get; set; } = false;
+        public static bool Debug { get; set; } = true;
+        public static bool LogToFile { get; set; } = true;
 
 
     }
