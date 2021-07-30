@@ -1,10 +1,15 @@
 ﻿using HarmonyLib;
 using KaosesWages.Objects;
 using System;
-using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.ViewModelCollection;
+using System.Collections.Generic;
+using System.Linq;
+using Helpers;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection;
+using TaleWorlds.Library;
+using TaleWorlds.Localization;
+using TaleWorlds.CampaignSystem.ViewModelCollection;
+using TaleWorlds.CampaignSystem;
 
 namespace KaosesWages.Patches
 {
@@ -56,6 +61,8 @@ namespace KaosesWages.Patches
                 tooltipVM.AddProperty("", "", 0, TooltipProperty.TooltipPropertyFlags.None);
                 tooltipVM.AddProperty("", GameTexts.FindText("str_skills", null).ToString(), 0, TooltipProperty.TooltipPropertyFlags.None);
                 tooltipVM.AddProperty("", "", 0, TooltipProperty.TooltipPropertyFlags.RundownSeperator);
+
+
                 foreach (SkillObject skillObject in SkillObject.All)
                 {
                     if (character.GetSkillValue(skillObject) > 0)
@@ -67,6 +74,7 @@ namespace KaosesWages.Patches
             }
 
         }
+
 
         static bool Prepare()
         {

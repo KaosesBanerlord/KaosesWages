@@ -5,12 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KaosesWages", "KaosesWages\KaosesWages.csproj", "{16BA6F77-3054-4FE2-9B0C-2D9FEBF2379F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{73C671FE-AF1D-43D9-81F3-8A886275C60C}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaosesCommon", "..\KaosesCommon\KaosesCommon\KaosesCommon.csproj", "{3EC1B6D9-24A9-4BB1-8BC2-73F82677806D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaosesCommon", "..\..\KaosesCommon\KaosesCommon\KaosesCommon.csproj", "{3EC1B6D9-24A9-4BB1-8BC2-73F82677806D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
