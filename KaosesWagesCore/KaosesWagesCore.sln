@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaosesWagesCore", "KaosesWagesCore.csproj", "{95E31AC2-7CAC-4AA8-B063-F636186483A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95E31AC2-7CAC-4AA8-B063-F636186483A6}.Debug|x64.ActiveCfg = Debug|x64
+		{95E31AC2-7CAC-4AA8-B063-F636186483A6}.Debug|x64.Build.0 = Debug|x64
+		{95E31AC2-7CAC-4AA8-B063-F636186483A6}.Release|x64.ActiveCfg = Release|x64
+		{95E31AC2-7CAC-4AA8-B063-F636186483A6}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCEE2899-26D1-4F42-862F-14AB783A898E}
+	EndGlobalSection
+EndGlobal
