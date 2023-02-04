@@ -2,6 +2,8 @@
 using TaleWorlds.CampaignSystem;
 using System.Reflection;
 using Helpers;
+using TaleWorlds.CampaignSystem.Party;
+using TaleWorlds.CampaignSystem.Roster;
 
 namespace KaosesWages.Patches
 {

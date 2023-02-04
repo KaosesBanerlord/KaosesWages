@@ -1,12 +1,16 @@
 ﻿using HarmonyLib;
 using KaosesWages.Objects;
+using KaosesWagesCore.Objects;
+using KaosesWagesCore.Objects.Loaders;
 using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.ViewModelCollection;
+using TaleWorlds.CampaignSystem.ViewModelCollection.Party;
 
 // Token: 0x0600067C RID: 1660 RVA: 0x0001F0AC File Offset: 0x0001D2AC
 //namespace TaleWorlds.CampaignSystem.ViewModelCollection
 //{
-    // Token: 0x02000028 RID: 40
+// Token: 0x02000028 RID: 40
 //    public class PartyVM : ViewModel, IPartyScreenLogicHandler, PartyScreenPrisonHandler, IPartyScreenTroopHandler
 //private void RefreshCurrentCharacterInformation()
 
