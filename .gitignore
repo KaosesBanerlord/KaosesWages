@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs/KaosesWages
+/KaosesWages/obj
+/KaosesWages/bin/x64/Debug/net472
+/KaosesWagesCore/obj
+/KaosesWagesCore/.vs/KaosesWagesCore
+/KaosesWagesCore/KaosesWagesCore.csproj
+/.vs/VSWorkspaceState.json
