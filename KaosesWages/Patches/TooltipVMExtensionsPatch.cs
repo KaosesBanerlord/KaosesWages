@@ -70,7 +70,7 @@ namespace KaosesWages.Patches
 
 
                 //foreach (SkillObject skillObject in SkillObject.All)
-                foreach (SkillObject skill in Skills.All)
+                foreach (SkillObject skill in (List<SkillObject>)Skills.All)
                 {
                     if (character.GetSkillValue(skill) > 0)
                     {

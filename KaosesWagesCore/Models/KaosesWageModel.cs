@@ -280,9 +280,9 @@ namespace KaosesWagesCore.Models
                     {
                         explainedNumber.AddFactor(DefaultPerks.TwoHanded.ShowOfStrength.SecondaryBonus * 0.01f, null);
                     }
-                    if (buyerHero.GetPerkValue(DefaultPerks.Polearm.GenerousRations))//DefaultPerks.Polearm.GenerousRations
+                    if (buyerHero.GetPerkValue(DefaultPerks.Polearm.HardyFrontline))//DefaultPerks.Polearm.GenerousRations
                     {
-                        explainedNumber.AddFactor(DefaultPerks.Polearm.GenerousRations.SecondaryBonus * 0.01f, null);
+                        explainedNumber.AddFactor(DefaultPerks.Polearm.HardyFrontline.SecondaryBonus * 0.01f, null);
                     }
                 }
                 if (troop.IsRanged)

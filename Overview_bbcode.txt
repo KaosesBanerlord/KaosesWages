@@ -1,0 +1,58 @@
+[size=6][color=#f1c232][u]Overview[/u][/color][/size]
+This is a quality-of-life mod to allow the adjusting of troop wages up or down. Also allows adjusting the cost of recruiting soldiers and mercenaries.
+Units with horses can have a optional daily wage value set this is added to each individual troop with a horses daily wages.
+Can also set the additional amount for recruiting troops with horses, can be set for below tier 4 and tier 4 and above separately.
+Optionally if the option 'Companion Recruit Troops cost' then any member of the players clan will use the settings for the player, other wise they use AI settings.
+
+Includes option to increase troop upgrade costs for the player and optionally player clan members.
+
+All multipliers have been separated into player and AI multipliers.
+
+Caravan and Garrison multipliers are applied to the total wages, e.g. a garrison multiplier 0.5 would have the total cost of garrison's.
+
+To have the selected troop view in party screen and the tool tip in the troop upgrade trees reflect the correct wages I have had to implement two harmony patches, 
+the exact methods are in the changes. This could cause conflicts if other mods also are changing the two methods mentioned. For the tooltip change the correct wage is shown at 
+the bottom of the tool tip and is the best that I could get to work currently.
+
+[size=5][color=#f1c232]Requirements:[/color][/size]
+The easiest way to get the mod requirements is to use[url=https://next.nexusmods.com/mountandblade2bannerlord/collections/8c8nmp]Kaoses Mod Requirements | Mount & Blade II: Bannerlord | Nexus Mods[/url] collection as a base, and then download [url=https://www.nexusmods.com/mountandblade2bannerlord/mods/4994]Kaoses Common[/url]
+
+[size=5][color=#f1c232]Documentation[/color][/size]
+For detailed information and API docs visit [url=http://bannerlord.kaoses.com/doku.php?id=mods:kaoseswages]Kaoses Wages Wiki page[/url].
+
+[size=5][color=#f1c232]Features:[/color][/size]
+[list]
+[*]Player
+[*]Player Clan
+[*]Kingdom
+[*]Garrison
+[*]Caravan
+[*]Mercenary Multiplier
+[*]Bandit Multiplier
+[*]Mounted Additional Cost
+[*]Recruuitment Costs
+[*]Recruitment cost by Tier
+[*]Wages By Tier
+[*]Wage additional mounted cost
+[/list]
+[size=5][color=#f1c232]Installation:[/color][/size]
+[size=3]It is best to install the mod via vortex if you are not an advanced user[/size]
+Add the mod folder to your modules folder (C:\Program Files (x86)\Steam\steamapps\common\Mount
+& Blade II Bannerlord\Modules) unblock the .dll and then activate it.
+
+[size=5][color=#f1c232]Translations:[/color][/size]
+The mod should be fully translatable, and the strings file can be found in the download section, or in the folder ModuleData inside of the mod folder.
+
+[size=5][color=#f1c232]My Other Mods:[/color][/size]
+[list]
+[*][url=https://www.nexusmods.com/mountandblade2bannerlord/mods/2911]Kaoses tweaks[/url]
+[*][url=https://www.nexusmods.com/mountandblade2bannerlord/mods/4994]Kaoses Common[/url]
+[*][url=https://www.nexusmods.com/mountandblade2bannerlord/mods/684]Kaoses Party sizes[/url]
+[*][url=https://www.nexusmods.com/mountandblade2bannerlord/mods/1333]Kaoses Troop Wages[/url]
+[*][url=https://www.nexusmods.com/mountandblade2bannerlord/mods/1335]Kaoses Trade Goods[/url]
+[*][url=https://www.nexusmods.com/mountandblade2bannerlord/mods/726]Kaoses Projectiles[/url]
+[*][url=https://www.nexusmods.com/mountandblade2bannerlord/mods/2912/]Kaoses Party Speeds[/url]
+[*][url=https://www.nexusmods.com/mountandblade2bannerlord/mods/77]More Bandits[/url]
+[*][url=https://www.nexusmods.com/mountandblade2bannerlord/mods/79]More Projectiles[/url]
+[*][url=https://www.nexusmods.com/mountandblade2bannerlord/mods/335]Expanded Bandits[/url]
+[/list]
